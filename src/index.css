@@ -540,6 +540,68 @@ p {
   color: var(--text3);
 }
 
+/* ── Academic Writing ── */
+.writing-list { display: flex; flex-direction: column; gap: 2px; }
+
+.writing-item {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.writing-item:last-child { border-bottom: none; }
+
+.writing-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.writing-course {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.writing-term {
+  font-size: 11.5px;
+  color: var(--text3);
+}
+
+.writing-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.writing-desc {
+  font-size: 12.5px;
+  color: var(--text2);
+  line-height: 1.6;
+  max-width: 620px;
+}
+
+.writing-read-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  padding: 4px 10px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 11.5px;
+  color: var(--text2);
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.writing-read-btn:hover { color: var(--text); border-color: var(--border2); opacity: 1; }
+.writing-read-btn svg { width: 11px; height: 11px; }
+
 /* ── Responsive ── */
 @media (max-width: 640px) {
   :root { --section-pad: 40px 0 36px; }

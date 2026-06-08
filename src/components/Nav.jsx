@@ -9,6 +9,7 @@ export default function Nav() {
           <li><a href="#experience">Experience</a></li>
           <li><a href="#leadership">Leadership</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#writing">Writing</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>

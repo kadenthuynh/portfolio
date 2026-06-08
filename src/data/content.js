@@ -6,7 +6,7 @@ export const meta = {
   phone: "(858) 888-3691",
   linkedin: "https://linkedin.com/in/kadenthuynh",
   github: "https://github.com/kadenthuynh",
-  bio: "UCSB student studying Political Science and Philosophy with a focus on political theory, law, and public service. Trilingual across English, Spanish, and Vietnamese — shaped by time across San Diego, Colombia, Spain, and Japan.",
+  bio: "UCSB student studying Political Science and Philosophy with a focus on political theory, law, and public service. Trilingual in English, Spanish, and Vietnamese, shaped by time across San Diego, Colombia, Spain, and Japan.",
 };
 
 export const education = [
@@ -108,23 +108,50 @@ export const projects = [
   {
     name: "realtomato",
     description:
-      "Time-gated personal gift website delivering 23 date-locked daily entries — photos, notes, and curated songs — to a single recipient over 23 consecutive days.",
+      "Time-gated personal gift website delivering 23 date-locked daily entries (photos, notes, and curated songs) to a single recipient over 23 consecutive days.",
     bullets: [
       "Achieved cross-platform audio playback on iOS Safari by managing gesture-token autoplay compliance, bfcache session restoration, and a dual-channel native HTML5 audio engine with per-song seek-to-chorus offsets",
       "Built timezone-aware (PST/PDT) midnight unlock logic with a real-time countdown timer and versioned localStorage caching to eliminate repeat-visit network requests",
       "Designed a trivia-based auth system with 23 daily relationship questions, seeded-shuffle rotation, letter-box UI with hint-reveal mechanics, and a hidden admin bypass",
     ],
     tech: ["Vanilla JS", "HTML5 Audio API", "CSS", "LocalStorage"],
-    github: null,
+    github: "https://github.com/kadenthuynh/taylor",
     live: null,
   },
   {
     name: "Portfolio Website",
     description:
-      "This site — a personal about-me and portfolio, built with React + Vite. Single-page, dark, compact-minimal design pulling all content from a structured data file.",
+      "Personal about-me and portfolio built with React + Vite. Single-page, dark, compact-minimal design with all content driven from a structured data file.",
     tech: ["React", "Vite", "CSS", "Vercel"],
     github: "https://github.com/kadenthuynh/portfolio",
     live: null,
+  },
+];
+
+export const writing = [
+  {
+    title: "Your Paper Title Here",
+    course: "POLS 135",
+    term: "Winter 2025",
+    description:
+      "A brief 2-3 sentence abstract or description of what this paper argues. Replace this with your actual abstract. Add the link field below once you have a Google Doc or PDF link.",
+    link: null,
+  },
+  {
+    title: "Your Paper Title Here",
+    course: "POLS 187",
+    term: "Spring 2025",
+    description:
+      "A brief 2-3 sentence abstract or description of what this paper argues. Replace this with your actual abstract.",
+    link: null,
+  },
+  {
+    title: "Your Paper Title Here",
+    course: "POLS 188",
+    term: "Fall 2024",
+    description:
+      "A brief 2-3 sentence abstract or description of what this paper argues. Replace this with your actual abstract.",
+    link: null,
   },
 ];
 

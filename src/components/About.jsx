@@ -6,13 +6,13 @@ export default function About() {
         <div className="about-grid">
           <div className="about-text">
             <p>
-              I'm a Political Science and Philosophy student at UC Santa Barbara with a 3.87 GPA, focused on political theory, governance, and the intersection of law and ethics. My academic path reflects a deliberate interest in how institutions shape societies — and how individuals can shape institutions.
+              I'm a Political Science and Philosophy student at UC Santa Barbara with a 3.87 GPA, focused on political theory, governance, and the intersection of law and ethics. My academic path reflects a deliberate interest in how institutions shape societies, and how individuals can shape them.
             </p>
             <p>
-              Outside the classroom, I've led youth organizations, competed in parliamentary debate across California, and co-founded a cross-border fundraiser for Colombian youth programs. I'm trilingual in English, Spanish, and Vietnamese — a reflection of the cultural spaces I've moved through growing up in San Diego.
+              Outside the classroom, I've led youth organizations, competed in parliamentary debate across California, and co-founded a cross-border fundraiser for Colombian youth programs. I'm trilingual in English, Spanish, and Vietnamese, shaped by the cultural spaces I've moved through growing up in San Diego.
             </p>
             <p>
-              I also build things. The projects on this site come from genuine curiosity: I wanted tools that didn't exist, so I built them. That instinct — to move from problem to solution — is what connects my academic work, my leadership, and my side projects.
+              I also build things. The projects on this site come from genuine curiosity: I wanted tools that didn't exist, so I built them. That instinct, from problem to solution, connects my academic work, my leadership, and my side projects.
             </p>
           </div>
           <div className="about-stats">
