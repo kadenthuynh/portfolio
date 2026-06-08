@@ -1,27 +1,32 @@
 import { experience } from "../data/content";
+import BlockHead from "./BlockHead";
 
 export default function Experience() {
   return (
-    <section id="experience">
-      <div className="container">
-        <p className="sec-label">Experience</p>
-        <div className="timeline">
-          {experience.map((e, i) => (
-            <div className="timeline-item" key={i}>
+    <section className="block" id="experience">
+      <BlockHead num="01" title="Experience" />
+      <div>
+        {experience.map((e, i) => (
+          <div className="row" key={i}>
+            <div className="row-top">
               <div>
-                <div className="timeline-role">{e.role}</div>
-                <div className="timeline-org">{e.company}</div>
-                <div className="timeline-location">{e.location}</div>
+                <div className="row-role">{e.role}</div>
+                <div className="row-org">
+                  {e.company}
+                  {e.location && <span className="loc"> · {e.location}</span>}
+                </div>
               </div>
-              <div className="timeline-period">{e.period}</div>
-              <ul className="timeline-bullets">
+              <div className="row-period">{e.period}</div>
+            </div>
+            {e.bullets && (
+              <ul className="bullets">
                 {e.bullets.map((b, j) => (
                   <li key={j}>{b}</li>
                 ))}
               </ul>
-            </div>
-          ))}
-        </div>
+            )}
+          </div>
+        ))}
       </div>
     </section>
   );

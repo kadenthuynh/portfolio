@@ -1,27 +1,32 @@
 import { leadership } from "../data/content";
+import BlockHead from "./BlockHead";
 
 export default function Leadership() {
   return (
-    <section id="leadership">
-      <div className="container">
-        <p className="sec-label">Leadership &amp; Activities</p>
-        <div className="timeline">
-          {leadership.map((l, i) => (
-            <div className="timeline-item" key={i}>
+    <section className="block" id="leadership">
+      <BlockHead num="04" title="Leadership & Service" />
+      <div>
+        {leadership.map((l, i) => (
+          <div className="row" key={i}>
+            <div className="row-top">
               <div>
-                <div className="timeline-role">{l.role}</div>
-                <div className="timeline-org">{l.org}</div>
-                <div className="timeline-location">{l.location}</div>
+                <div className="row-role">{l.role}</div>
+                <div className="row-org">
+                  {l.org}
+                  {l.location && <span className="loc"> · {l.location}</span>}
+                </div>
               </div>
-              <div className="timeline-period">{l.period}</div>
-              <ul className="timeline-bullets">
+              <div className="row-period">{l.period}</div>
+            </div>
+            {l.bullets && (
+              <ul className="bullets">
                 {l.bullets.map((b, j) => (
                   <li key={j}>{b}</li>
                 ))}
               </ul>
-            </div>
-          ))}
-        </div>
+            )}
+          </div>
+        ))}
       </div>
     </section>
   );

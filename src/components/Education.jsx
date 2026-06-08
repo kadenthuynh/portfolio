@@ -1,41 +1,55 @@
 import { education } from "../data/content";
+import BlockHead from "./BlockHead";
 
 export default function Education() {
   return (
-    <section id="education">
-      <div className="container">
-        <p className="sec-label">Education</p>
-        <div className="edu-list">
-          {education.map((e, i) => (
-            <div className="edu-item" key={i}>
-              <div>
-                <div className="edu-school">{e.school}</div>
-                {e.location && <div className="edu-location">{e.location}</div>}
-                <div className="edu-degree">{e.degree}</div>
-                {e.gpa && (
-                  <div className="edu-gpa">
-                    GPA <strong>{e.gpa}</strong>
+    <section className="block" id="education">
+      <BlockHead num="02" title="Education" />
+      <div>
+        {education.map((e, i) => {
+          const abroad = e.degree === "Study Abroad";
+          return (
+            <div className="row" key={i}>
+              <div className="row-top">
+                <div>
+                  <div className="row-role">
+                    {e.school}
+                    {abroad && <span className="tag blue" style={{ marginLeft: 8 }}>Study Abroad ✈</span>}
                   </div>
-                )}
+                  {!abroad && (
+                    <>
+                      <div className="meta-line">
+                        {e.degree}
+                        {e.location && ` · ${e.location}`}
+                      </div>
+                      {e.gpa && (
+                        <div className="edu-gpa">GPA <strong>{e.gpa}</strong></div>
+                      )}
+                    </>
+                  )}
+                  {abroad && e.location && <div className="meta-line">{e.location}</div>}
+                </div>
+                <div className="row-period">{e.period}</div>
               </div>
-              <div className="edu-period">{e.period}</div>
               {e.honors && e.honors.length > 0 && (
-                <div className="edu-honors">
+                <div className="tags">
+                  <span className="tag-label">Honors</span>
                   {e.honors.map((h) => (
-                    <span className="chip chip-accent" key={h}>{h}</span>
+                    <span className="tag gold" key={h}>{h}</span>
                   ))}
                 </div>
               )}
               {e.coursework && e.coursework.length > 0 && (
-                <div className="coursework">
+                <div className="tags">
+                  <span className="tag-label">Coursework</span>
                   {e.coursework.map((c) => (
-                    <span className="chip" key={c}>{c}</span>
+                    <span className="tag" key={c}>{c}</span>
                   ))}
                 </div>
               )}
             </div>
-          ))}
-        </div>
+          );
+        })}
       </div>
     </section>
   );

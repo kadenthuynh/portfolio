@@ -1,18 +1,28 @@
 export const meta = {
   name: "Kaden Huynh",
+  first: "Kaden",
+  last: "Huynh",
   title: "Political Science & Philosophy @ UCSB",
+  role: "Political Science & Philosophy\nUniversity of California, Santa Barbara",
+  tagline: "About Me",
   location: "San Diego, CA",
   email: "kadenthuynh@gmail.com",
   phone: "(858) 888-3691",
   linkedin: "https://linkedin.com/in/kadenthuynh",
   github: "https://github.com/kadenthuynh",
   bio: "UCSB student studying Political Science and Philosophy with a focus on political theory, law, and public service. Trilingual in English, Spanish, and Vietnamese, shaped by time across San Diego, Colombia, Spain, and Japan.",
+  intro: [
+    "I'm a student at UC Santa Barbara pursuing a Bachelor of Arts in Political Science with an emphasis on political theory. I'm minoring in Philosophy and deeply intrigued by morals and ethics. After I graduate, I plan to attend law school and pursue a career in corporate law.",
+    "Outside the classroom I've led youth organizations, competed in parliamentary debate across California, and led a cross-border fundraiser for Colombian youth programs. I'm passionate about community volunteering and have extensive experience in customer service.",
+  ],
 };
+
+export const stats = [];
 
 export const education = [
   {
     school: "University of California, Santa Barbara",
-    degree: "B.A. Political Science, Minor in Philosophy",
+    degree: "Bachelor of Arts in Political Science, Minor in Philosophy",
     period: "Sep 2024 – Jun 2027",
     gpa: "3.87 / 4.0",
     honors: ["Dean's Honor List", "National Political Science Honor Society"],
@@ -25,7 +35,7 @@ export const education = [
   },
   {
     school: "Universitat Autònoma de Barcelona (UCEAP)",
-    location: "Barcelona & Madrid, Spain",
+    location: "Barcelona, Spain",
     degree: "Study Abroad",
     period: "Jun 2026 – Aug 2026",
     coursework: ["Leadership & Negotiation Techniques", "Critical Thinking"],
@@ -40,10 +50,20 @@ export const education = [
 
 export const experience = [
   {
+    role: "Writing Tutor",
+    company: "UCSB Campus Learning Assistance Services (CLAS)",
+    location: "Santa Barbara, CA",
+    period: "Jan 2027 – Jun 2027",
+    bullets: [
+      "Will provide one-on-one writing support to students across disciplines, assisting at every stage from prompt analysis and brainstorming to structure, argumentation, and final revision",
+      "Will assess individual student needs and develop targeted strategies to strengthen clarity, organization, and academic writing conventions",
+    ],
+  },
+  {
     role: "Shift Lead",
     company: "Pho Ha Grill & Bar",
     location: "Oceanside, CA",
-    period: "Dec 2021 – Present",
+    period: "Dec 2021 – Dec 2025",
     bullets: [
       "Supervised 10+ employees and onboarded 5 new hires across high-volume shifts",
       "Analyzed delivery platform (Grubhub, DoorDash, Uber Eats) metrics and implemented UI optimizations that increased online orders by 25%",
@@ -106,19 +126,6 @@ export const projects = [
     live: null,
   },
   {
-    name: "realtomato",
-    description:
-      "Time-gated personal gift website delivering 23 date-locked daily entries (photos, notes, and curated songs) to a single recipient over 23 consecutive days.",
-    bullets: [
-      "Achieved cross-platform audio playback on iOS Safari by managing gesture-token autoplay compliance, bfcache session restoration, and a dual-channel native HTML5 audio engine with per-song seek-to-chorus offsets",
-      "Built timezone-aware (PST/PDT) midnight unlock logic with a real-time countdown timer and versioned localStorage caching to eliminate repeat-visit network requests",
-      "Designed a trivia-based auth system with 23 daily relationship questions, seeded-shuffle rotation, letter-box UI with hint-reveal mechanics, and a hidden admin bypass",
-    ],
-    tech: ["Vanilla JS", "HTML5 Audio API", "CSS", "LocalStorage"],
-    github: "https://github.com/kadenthuynh/taylor",
-    live: null,
-  },
-  {
     name: "Portfolio Website",
     description:
       "Personal about-me and portfolio built with React + Vite. Single-page, dark, compact-minimal design with all content driven from a structured data file.",
@@ -130,28 +137,68 @@ export const projects = [
 
 export const writing = [
   {
-    title: "Your Paper Title Here",
-    course: "POLS 135",
-    term: "Winter 2025",
+    title: "Equality",
+    course: "Modern Political Theory",
+    term: "Spring 2026",
     description:
-      "A brief 2-3 sentence abstract or description of what this paper argues. Replace this with your actual abstract. Add the link field below once you have a Google Doc or PDF link.",
-    link: null,
+      "Analyzes the divergent roles of equality in the political thought of Hobbes and Rousseau.",
+    link: "/equality.pdf",
   },
   {
-    title: "Your Paper Title Here",
-    course: "POLS 187",
-    term: "Spring 2025",
+    title: "Limits of Government",
+    course: "Contemporary Political Theory",
+    term: "Winter 2026",
     description:
-      "A brief 2-3 sentence abstract or description of what this paper argues. Replace this with your actual abstract.",
-    link: null,
+      "Argues that market freedom produces not genuine liberty but structural inequality and economic domination.",
+    link: "/limits-of-government.pdf",
   },
   {
-    title: "Your Paper Title Here",
-    course: "POLS 188",
+    title: "Japan's Political Reinvention",
+    course: "Government and Politics of Japan",
+    term: "Winter 2026",
+    description:
+      "Argues that Japan's Meiji and postwar reinventions were responses to crisis, not ideological revolutions.",
+    link: "/japans-political-reinvention.pdf",
+  },
+  {
+    title: "Japan's Framing of Atrocity",
+    course: "Government and Politics of Japan",
+    term: "Winter 2026",
+    description:
+      "Examines how Japan and the U.S. have managed public narratives around wartime atrocities.",
+    link: "/japans-framing-of-atrocity.pdf",
+  },
+  {
+    title: "Against Betting on God",
+    course: "Intro to Philosophy",
     term: "Fall 2024",
     description:
-      "A brief 2-3 sentence abstract or description of what this paper argues. Replace this with your actual abstract.",
-    link: null,
+      "Challenges Pascal's Wager by contesting the premise that rational decision-making always demands choosing the option with the greatest expected utility.",
+    link: "/against-betting-on-god.pdf",
+  },
+  {
+    title: "We Are Awake",
+    course: "Intro to Philosophy",
+    term: "Fall 2024",
+    description:
+      "Challenges the Dreaming Argument's first premise by arguing that active perception of one's actions provides sufficient grounds for knowledge.",
+    link: "/we-are-awake.pdf",
+  },
+  {
+    title: "Morals",
+    course: "Intro to Philosophy",
+    term: "Fall 2024",
+    description:
+      "Argues that intent and means are morally distinct, and that not all actions with identical outcomes carry equal ethical weight.",
+    link: "/morals.pdf",
+  },
+  {
+    title: "In Defense of the Modern State",
+    course: "Intro to Political Philosophy",
+    term: "Fall 2024",
+    description:
+      "Argues that the modern state, grounded in Locke's social contract, is the most effective framework for achieving political equality.",
+    link: "/the-modern-state.pdf",
   },
 ];
 
@@ -161,7 +208,11 @@ export const skills = {
     { lang: "Spanish", level: "Fluent" },
     { lang: "Vietnamese", level: "Proficient" },
   ],
-  tools: ["Microsoft Word", "Excel", "PowerPoint", "Google Docs", "Sheets", "Slides"],
+  tools: [
+    { label: "Microsoft Office", items: ["Microsoft Word", "Excel", "PowerPoint"] },
+    { label: "Google Workspace", items: ["Google Docs", "Sheets", "Slides"] },
+    { label: "Developer Tools", items: ["VS Code", "GitHub", "Vercel", "Supabase"] },
+  ],
   awards: [
     "AP Scholar with Distinction",
     "Seal of Biliteracy in Spanish",

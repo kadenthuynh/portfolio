@@ -1,47 +1,48 @@
 import { skills, interests } from "../data/content";
+import BlockHead from "./BlockHead";
 
 export default function Skills() {
   return (
-    <section id="skills">
-      <div className="container">
-        <p className="sec-label">Skills &amp; Recognition</p>
-        <div className="skills-grid">
-          <div>
-            <div className="skill-group-label">Languages</div>
-            <div className="lang-list">
-              {skills.languages.map((l) => (
-                <div className="lang-item" key={l.lang}>
-                  <span className="lang-name">{l.lang}</span>
-                  <span className="lang-level">{l.level}</span>
-                </div>
-              ))}
+    <section className="block" id="skills">
+      <BlockHead num="06" title="Skills & Recognition" />
+      <div className="skills-top">
+        <div>
+          <div className="sg-label">Languages</div>
+          {skills.languages.map((l) => (
+            <div className="lang" key={l.lang}>
+              <span className="n">{l.lang}</span>
+              <span className="lv">{l.level}</span>
             </div>
-          </div>
-          <div>
-            <div className="skill-group-label">Tools</div>
-            <div className="tools-list">
-              {skills.tools.map((t) => (
-                <span key={t}>{t}</span>
-              ))}
-            </div>
-          </div>
-          <div>
-            <div className="skill-group-label">Awards</div>
-            <div className="awards-list">
-              {skills.awards.map((a) => (
-                <span key={a}>{a}</span>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
-
-        <div style={{ marginTop: 28 }}>
-          <div className="skill-group-label">Interests</div>
-          <div className="interests-wrap">
-            {interests.map((item) => (
-              <span className="interest-tag" key={item}>{item}</span>
+        <div>
+          <div className="sg-label">Awards</div>
+          <div className="stack">
+            {skills.awards.map((a) => (
+              <span key={a}>{a}</span>
             ))}
           </div>
+        </div>
+      </div>
+      <div className="skills-tools">
+        <div className="sg-label">Tools</div>
+        <div className="tool-groups-row">
+          {skills.tools.map((group, gi) => (
+            <div className="tool-group" key={gi}>
+              <span className="tool-bracket-label">{group.label}</span>
+              <div className="tool-bracket">
+                {group.items.map((t) => <span key={t}>{t}</span>)}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="interests">
+        <div className="sg-label">Interests</div>
+        <div className="interests-wrap">
+          {interests.map((item) => (
+            <span className="tag" key={item}>{item}</span>
+          ))}
         </div>
       </div>
     </section>
