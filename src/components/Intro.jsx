@@ -3,6 +3,7 @@ import { meta, stats } from "../data/content";
 import { fadeUp, stagger } from "../motion";
 import { Spotlight } from "./ui/spotlight";
 import { TextReveal } from "./ui/text-reveal";
+import BlockHead from "./BlockHead";
 
 export default function Intro() {
   return (
@@ -16,7 +17,7 @@ export default function Intro() {
           animate="show"
           custom={{ delayChildren: 0.1 }}
         >
-          <h1><TextReveal text={meta.tagline} /></h1>
+          <BlockHead num="00" title={meta.tagline} />
           {meta.intro.map((para, i) => (
             <motion.p key={i} variants={fadeUp}>{para}</motion.p>
           ))}
