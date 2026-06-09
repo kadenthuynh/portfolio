@@ -16,7 +16,7 @@ export default function Intro() {
           animate="show"
           custom={{ delayChildren: 0.1 }}
         >
-          <h1 style={{ display: "flex", alignItems: "baseline", gap: "10px" }}>
+          <h1 style={{ position: "relative" }}>
             <span className="b-num">00</span>
             <TextReveal text={meta.tagline} />
           </h1>
