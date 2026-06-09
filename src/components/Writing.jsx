@@ -1,19 +1,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { X, FileText } from "lucide-react";
 import { writing } from "../data/content";
 import { essayContent } from "../data/essays";
 import BlockHead from "./BlockHead";
-
-const IconClose = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-  </svg>
-);
-const IconPDF = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/>
-  </svg>
-);
+import { Button, LinkButton } from "./ui/button";
 
 function essayKey(link) {
   return link.replace(/^\//, "").replace(/\.pdf$/, "");
@@ -46,7 +37,10 @@ function EssayBody({ link }) {
         return (
           <div key={i} className="essay-arg-block">
             {parts.map((part, j) => (
-              <p key={j} className={/^\([A-Z]{1,4}\d?\)/.test(part) ? "essay-premise" : undefined}>
+              <p
+                key={j}
+                className={/^\([A-Z]{1,4}\d?\)/.test(part) ? "essay-premise" : undefined}
+              >
                 {part.trim()}
               </p>
             ))}
@@ -56,6 +50,51 @@ function EssayBody({ link }) {
     }
     return <p key={i}>{para}</p>;
   });
+}
+
+function WritingCard({ w, index, onOpen }) {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <motion.div
+      className="w-card"
+      onHoverStart={() => setHovered(true)}
+      onHoverEnd={() => setHovered(false)}
+      onClick={() => onOpen(w)}
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.38, delay: index * 0.05, ease: [0.25, 0.1, 0.25, 1] }}
+    >
+      <div className="w-card-front">
+        <motion.div
+          className="w-title"
+          animate={{ color: hovered ? "var(--accent)" : "var(--text)" }}
+          transition={{ duration: 0.15 }}
+        >
+          {w.title}
+        </motion.div>
+        <div className="w-tags">
+          <b>{w.course}</b> · {w.term}
+        </div>
+        <motion.div
+          className="w-read"
+          animate={{ color: hovered ? "var(--accent)" : "var(--text3)" }}
+          transition={{ duration: 0.15 }}
+        >
+          READ&nbsp;↗
+        </motion.div>
+      </div>
+      <motion.div
+        className="w-card-desc"
+        animate={{ opacity: hovered ? 1 : 0 }}
+        transition={{ duration: 0.18 }}
+        style={{ pointerEvents: hovered ? "auto" : "none" }}
+      >
+        {w.description}
+      </motion.div>
+    </motion.div>
+  );
 }
 
 export default function Writing() {
@@ -76,22 +115,7 @@ export default function Writing() {
         <BlockHead num="03" title="Selected Writing" />
         <div className="w-grid">
           {writing.map((w, i) => (
-            <motion.div
-              className="w-card"
-              key={i}
-              onClick={() => open(w)}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.38, delay: i * 0.05, ease: [0.25, 0.1, 0.25, 1] }}
-            >
-              <div className="w-card-front">
-                <div className="w-title">{w.title}</div>
-                <div className="w-tags"><b>{w.course}</b> · {w.term}</div>
-                <div className="w-read">READ&nbsp;↗</div>
-              </div>
-              <div className="w-card-desc">{w.description}</div>
-            </motion.div>
+            <WritingCard key={i} w={w} index={i} onOpen={open} />
           ))}
         </div>
       </section>
@@ -108,27 +132,42 @@ export default function Writing() {
           >
             <motion.div
               className="modal"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="modal-title"
               onClick={(e) => e.stopPropagation()}
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              initial={{ opacity: 0, scale: 0.96, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              exit={{ opacity: 0, scale: 0.96, y: 20 }}
               transition={{ duration: 0.28, ease: [0.25, 0.1, 0.25, 1] }}
             >
               <div className="modal-head">
                 <div>
                   <div className="modal-meta">
-                    {active.course} <span className="term">{active.term}</span>
+                    {active.course}{" "}
+                    <span className="term">{active.term}</span>
                   </div>
-                  <div className="modal-title">{active.title}</div>
+                  <div className="modal-title" id="modal-title">
+                    {active.title}
+                  </div>
                 </div>
                 <div className="modal-actions">
-                  <a className="modal-pdf-btn" href={active.link} target="_blank" rel="noopener noreferrer">
-                    <IconPDF />
+                  <LinkButton
+                    href={active.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FileText size={14} strokeWidth={1.8} />
                     Open PDF
-                  </a>
-                  <button className="modal-close" onClick={close} aria-label="Close">
-                    <IconClose />
-                  </button>
+                  </LinkButton>
+                  <Button
+                    variant="icon"
+                    size="icon"
+                    onClick={close}
+                    aria-label="Close"
+                  >
+                    <X size={15} strokeWidth={1.8} />
+                  </Button>
                 </div>
               </div>
               <div className="modal-body">

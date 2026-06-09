@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { education } from "../data/content";
 import BlockHead from "./BlockHead";
+import { Badge } from "./ui/badge";
 
 export default function Education() {
   return (
@@ -22,7 +23,11 @@ export default function Education() {
                 <div>
                   <div className="row-role">
                     {e.school}
-                    {abroad && <span className="tag blue" style={{ marginLeft: 8 }}>Study Abroad ✈</span>}
+                    {abroad && (
+                      <Badge variant="blue" className="ml-2">
+                        Study Abroad ✈
+                      </Badge>
+                    )}
                   </div>
                   {!abroad && (
                     <>
@@ -31,11 +36,15 @@ export default function Education() {
                         {e.location && ` · ${e.location}`}
                       </div>
                       {e.gpa && (
-                        <div className="edu-gpa">GPA <strong>{e.gpa}</strong></div>
+                        <div className="edu-gpa">
+                          GPA <strong>{e.gpa}</strong>
+                        </div>
                       )}
                     </>
                   )}
-                  {abroad && e.location && <div className="meta-line">{e.location}</div>}
+                  {abroad && e.location && (
+                    <div className="meta-line">{e.location}</div>
+                  )}
                 </div>
                 <div className="row-period">{e.period}</div>
               </div>
@@ -43,7 +52,7 @@ export default function Education() {
                 <div className="tags">
                   <span className="tag-label">Honors</span>
                   {e.honors.map((h) => (
-                    <span className="tag gold" key={h}>{h}</span>
+                    <Badge key={h} variant="gold">{h}</Badge>
                   ))}
                 </div>
               )}
@@ -51,7 +60,7 @@ export default function Education() {
                 <div className="tags">
                   <span className="tag-label">Coursework</span>
                   {e.coursework.map((c) => (
-                    <span className="tag" key={c}>{c}</span>
+                    <Badge key={c}>{c}</Badge>
                   ))}
                 </div>
               )}
