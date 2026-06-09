@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { skills, interests } from "../data/content";
+import { skills } from "../data/content";
 import BlockHead from "./BlockHead";
 import { Badge } from "./ui/badge";
 
@@ -55,24 +55,6 @@ export default function Skills() {
           </div>
         </div>
 
-      </div>
-
-      {/* Interests — full-width strip */}
-      <div>
-        <div className="sg-label">Interests</div>
-        <div className="flex flex-wrap gap-1.5">
-          {interests.map((item, i) => (
-            <motion.div
-              key={item}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.25, delay: i * 0.04, ease: [0.25, 0.1, 0.25, 1] }}
-            >
-              <Badge>{item}</Badge>
-            </motion.div>
-          ))}
-        </div>
       </div>
 
     </section>
