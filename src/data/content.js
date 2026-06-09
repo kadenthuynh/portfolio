@@ -12,7 +12,8 @@ export const meta = {
   github: "https://github.com/kadenthuynh",
   bio: "UCSB student studying Political Science and Philosophy with a focus on political theory, law, and public service. Trilingual in English, Spanish, and Vietnamese, shaped by time across San Diego, Colombia, Spain, and Japan.",
   intro: [
-    "I'm a student at UC Santa Barbara pursuing a Bachelor of Arts in Political Science with an emphasis on political theory. I'm minoring in Philosophy and deeply intrigued by morals and ethics. After I graduate, I plan to attend law school and pursue a career in corporate law.",
+    "Hello! My name is Kaden and I'm currently pursuing a B.A. in Political Science at the University of California, Santa Barbara. I'm also minoring in Philosophy and deeply intrigued by morals and ethics. After I graduate, I plan to attend law school and pursue a career in corporate law.",
+    "Campus life has been a big part of my UCSB experience. I'm a member of the Pre-Law Society and Phi Alpha Delta law fraternity, and I find a lot of community in the Vietnamese Student Association and Chinese Student Union. When I'm not studying, I stay active on the volleyball court, in the weight room, at the rock climbing gym, or boxing with the Strikers Club.",
     "Outside the classroom I've led youth organizations, competed in parliamentary debate across California, and led a cross-border fundraiser for Colombian youth programs. I'm passionate about community volunteering and have extensive experience in customer service.",
   ],
 };
@@ -53,9 +54,9 @@ export const experience = [
     role: "Writing Tutor",
     company: "UCSB Campus Learning Assistance Services (CLAS)",
     location: "Santa Barbara, CA",
-    period: "Jan 2027 – Jun 2027",
+    period: "Sep 2026 – Jun 2027",
     bullets: [
-      "Will provide one-on-one writing support to students across disciplines, assisting at every stage from prompt analysis and brainstorming to structure, argumentation, and final revision",
+      "Will provide one-on-one writing support to students, assisting at every stage from prompt analysis and drafting to structure, argumentation, and final revision",
       "Will assess individual student needs and develop targeted strategies to strengthen clarity, organization, and academic writing conventions",
     ],
   },
