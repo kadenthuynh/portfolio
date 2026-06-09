@@ -32,6 +32,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+button, a { touch-action: manipulation; }
 html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
@@ -118,7 +119,7 @@ a { color: inherit; text-decoration: none; }
 .w-card:hover .w-title { color: var(--accent); }
 
 /* essay reader modal */
-.modal-overlay { position: fixed; inset: 0; z-index: 300; background: rgba(8,8,7,.72); backdrop-filter: blur(3px); display: flex; align-items: center; justify-content: center; padding: 4vh 4vw; }
+.modal-overlay { position: fixed; inset: 0; z-index: 300; background: rgba(8,8,7,.72); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); display: flex; align-items: center; justify-content: center; padding: 4vh 4vw; }
 .modal { width: 100%; max-width: 760px; height: 88vh; background: var(--panel); border: 1px solid var(--line2); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 30px 90px rgba(0,0,0,.5); }
 .modal-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 18px 22px; border-bottom: 1px solid var(--line); flex-shrink: 0; }
 .modal-meta { font-family: var(--font-mono); font-size: 11px; color: var(--accent); letter-spacing: .04em; }
@@ -193,8 +194,22 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 800px) {
   .shell { grid-template-columns: 1fr; }
-  .side { position: static; height: auto; flex-direction: column; border-right: none; border-bottom: 1px solid var(--line); }
+  .side { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--line); padding: 20px 24px; }
+  .side-nav { margin-top: 0; margin-bottom: 0; }
   .side-contact { margin-top: 16px; }
-  .intro, .block { padding-left: 32px; padding-right: 32px; }
-  .proj-grid, .skills-grid { grid-template-columns: 1fr; }
+  .intro, .block { padding-left: 24px; padding-right: 24px; }
+  .intro { padding-top: 36px; padding-bottom: 32px; }
+  .intro-inner { flex-direction: column; }
+  .intro-photo-placeholder { width: 100%; height: 200px; }
+  .intro-stats { gap: 24px; flex-wrap: wrap; }
+  .w-grid { grid-template-columns: 1fr; }
+  .w-card-desc { position: static; opacity: 1; pointer-events: auto; background: transparent; padding: 8px 0 0; }
+  .proj-grid, .skills-top { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .intro, .block { padding-left: 16px; padding-right: 16px; }
+  .side { padding: 16px; }
+  .side-name { font-size: 28px; }
+  .modal-body { padding: 20px 20px 32px; }
 }
