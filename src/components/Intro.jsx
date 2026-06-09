@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
 import { meta, stats } from "../data/content";
 import { fadeUp, stagger } from "../motion";
+import { Spotlight } from "./ui/spotlight";
+import { TextReveal } from "./ui/text-reveal";
 
 export default function Intro() {
   return (
-    <section id="intro" className="intro">
-      <div className="intro-inner">
+    <section id="intro" className="intro" style={{ position: "relative", overflow: "hidden" }}>
+      <Spotlight />
+      <div className="intro-inner" style={{ position: "relative", zIndex: 1 }}>
         <motion.div
           className="intro-text"
           variants={stagger}
@@ -13,7 +16,7 @@ export default function Intro() {
           animate="show"
           custom={{ delayChildren: 0.1 }}
         >
-          <motion.h1 variants={fadeUp}>{meta.tagline}</motion.h1>
+          <h1><TextReveal text={meta.tagline} /></h1>
           {meta.intro.map((para, i) => (
             <motion.p key={i} variants={fadeUp}>{para}</motion.p>
           ))}

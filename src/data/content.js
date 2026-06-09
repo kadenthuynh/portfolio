@@ -121,7 +121,7 @@ export const projects = [
     name: "Legal Directory CRM",
     description:
       "Full-featured contact management system for legal professionals. Includes Gmail and Google Calendar integrations, AI-powered email drafting via Claude, PIN-gated encrypted credentials, and Supabase cloud sync.",
-    tech: ["Vanilla JS", "HTML/CSS", "Supabase", "Claude API", "Google OAuth", "Vercel"],
+    tech: ["Vanilla JS", "HTML/CSS", "Supabase", "Claude API", "Vercel"],
     github: "https://github.com/kadenthuynh/legal",
     live: null,
   },
