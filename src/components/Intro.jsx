@@ -1,26 +1,41 @@
+import { motion } from "framer-motion";
 import { meta, stats } from "../data/content";
+import { fadeUp, stagger } from "../motion";
 
 export default function Intro() {
   return (
     <section id="intro" className="intro">
       <div className="intro-inner">
-        <div className="intro-text">
-          <h1>{meta.tagline}</h1>
+        <motion.div
+          className="intro-text"
+          variants={stagger}
+          initial="hidden"
+          animate="show"
+          custom={{ delayChildren: 0.1 }}
+        >
+          <motion.h1 variants={fadeUp}>{meta.tagline}</motion.h1>
           {meta.intro.map((para, i) => (
-            <p key={i}>{para}</p>
+            <motion.p key={i} variants={fadeUp}>{para}</motion.p>
           ))}
-          <div className="intro-stats">
-            {stats.map((s) => (
-              <div className="istat" key={s.label}>
-                <div className="v">{s.value}</div>
-                <div className="l">{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="intro-photo-placeholder">
+          {stats.length > 0 && (
+            <motion.div className="intro-stats" variants={stagger}>
+              {stats.map((s) => (
+                <motion.div className="istat" key={s.label} variants={fadeUp}>
+                  <div className="v">{s.value}</div>
+                  <div className="l">{s.label}</div>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+        </motion.div>
+        <motion.div
+          className="intro-photo-placeholder"
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.55, delay: 0.28, ease: [0.25, 0.1, 0.25, 1] }}
+        >
           <span>Photo</span>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

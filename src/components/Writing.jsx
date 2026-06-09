@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { writing } from "../data/content";
 import { essayContent } from "../data/essays";
 import BlockHead from "./BlockHead";
@@ -75,44 +76,68 @@ export default function Writing() {
         <BlockHead num="03" title="Selected Writing" />
         <div className="w-grid">
           {writing.map((w, i) => (
-            <div className="w-card" key={i} onClick={() => open(w)}>
+            <motion.div
+              className="w-card"
+              key={i}
+              onClick={() => open(w)}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.38, delay: i * 0.05, ease: [0.25, 0.1, 0.25, 1] }}
+            >
               <div className="w-card-front">
                 <div className="w-title">{w.title}</div>
                 <div className="w-tags"><b>{w.course}</b> · {w.term}</div>
                 <div className="w-read">READ&nbsp;↗</div>
               </div>
               <div className="w-card-desc">{w.description}</div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
 
-      {active && (
-        <div className="modal-overlay" onClick={close}>
-          <div className="modal" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-head">
-              <div>
-                <div className="modal-meta">
-                  {active.course} <span className="term">{active.term}</span>
+      <AnimatePresence>
+        {active && (
+          <motion.div
+            className="modal-overlay"
+            onClick={close}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.22 }}
+          >
+            <motion.div
+              className="modal"
+              onClick={(e) => e.stopPropagation()}
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ duration: 0.28, ease: [0.25, 0.1, 0.25, 1] }}
+            >
+              <div className="modal-head">
+                <div>
+                  <div className="modal-meta">
+                    {active.course} <span className="term">{active.term}</span>
+                  </div>
+                  <div className="modal-title">{active.title}</div>
                 </div>
-                <div className="modal-title">{active.title}</div>
+                <div className="modal-actions">
+                  <a className="modal-pdf-btn" href={active.link} target="_blank" rel="noopener noreferrer">
+                    <IconPDF />
+                    Open PDF
+                  </a>
+                  <button className="modal-close" onClick={close} aria-label="Close">
+                    <IconClose />
+                  </button>
+                </div>
               </div>
-              <div className="modal-actions">
-                <a className="modal-pdf-btn" href={active.link} target="_blank" rel="noopener noreferrer">
-                  <IconPDF />
-                  Open PDF
-                </a>
-                <button className="modal-close" onClick={close} aria-label="Close">
-                  <IconClose />
-                </button>
+              <div className="modal-body">
+                <EssayBody link={active.link} />
               </div>
-            </div>
-            <div className="modal-body">
-              <EssayBody link={active.link} />
-            </div>
-          </div>
-        </div>
-      )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
