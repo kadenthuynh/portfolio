@@ -7,9 +7,10 @@ export default function Skills() {
   return (
     <section className="block" id="skills">
       <BlockHead num="06" title="Skills & Recognition" />
-      <div className="grid grid-cols-2 tablet:grid-cols-4 gap-8">
 
-        {/* Languages */}
+      {/* Top row: Languages | Awards | Tools (double-wide, groups in a row) */}
+      <div className="grid grid-cols-2 tablet:grid-cols-4 gap-8 items-start mb-8">
+
         <div>
           <div className="sg-label">Languages</div>
           {skills.languages.map((l) => (
@@ -20,7 +21,23 @@ export default function Skills() {
           ))}
         </div>
 
-        {/* Awards */}
+        {/* Tools spans 2 columns; bracket groups laid out in a row */}
+        <div className="col-span-2">
+          <div className="sg-label">Tools</div>
+          <div className="flex gap-8">
+            {skills.tools.map((group) => (
+              <div key={group.label} className="flex-1">
+                <span className="tool-bracket-label">{group.label}</span>
+                <div className="tool-bracket">
+                  {group.items.map((t) => (
+                    <span key={t}>{t}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div>
           <div className="sg-label">Awards</div>
           <div className="flex flex-col gap-1.5">
@@ -38,40 +55,26 @@ export default function Skills() {
           </div>
         </div>
 
-        {/* Tools */}
-        <div>
-          <div className="sg-label">Tools</div>
-          <div className="flex flex-col gap-3">
-            {skills.tools.map((group, gi) => (
-              <div key={gi}>
-                <span className="tool-bracket-label">{group.label}</span>
-                <div className="tool-bracket">
-                  {group.items.map((t) => <span key={t}>{t}</span>)}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Interests */}
-        <div>
-          <div className="sg-label">Interests</div>
-          <div className="flex flex-wrap gap-1.5">
-            {interests.map((item, i) => (
-              <motion.div
-                key={item}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.25, delay: i * 0.04, ease: [0.25, 0.1, 0.25, 1] }}
-              >
-                <Badge>{item}</Badge>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
       </div>
+
+      {/* Interests — full-width strip */}
+      <div>
+        <div className="sg-label">Interests</div>
+        <div className="flex flex-wrap gap-1.5">
+          {interests.map((item, i) => (
+            <motion.div
+              key={item}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.25, delay: i * 0.04, ease: [0.25, 0.1, 0.25, 1] }}
+            >
+              <Badge>{item}</Badge>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
     </section>
   );
 }

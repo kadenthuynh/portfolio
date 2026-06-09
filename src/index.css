@@ -187,12 +187,9 @@ a { color: inherit; text-decoration: none; }
 .lang:last-child { border-bottom: none; }
 .lang .n { font-size: 14px; font-weight: 500; }
 .lang .lv { font-family: var(--font-mono); font-size: 11px; color: var(--text3); }
-.stack { display: flex; flex-direction: column; gap: 7px; }
-.stack span { font-size: 13.5px; color: var(--text2); }
-.tool-groups { display: flex; flex-direction: column; gap: 10px; }
 .tool-bracket { display: flex; flex-direction: column; gap: 5px; padding: 6px 10px; border-left: 2px solid var(--accent); }
 .tool-bracket span { font-size: 13.5px; color: var(--text2); }
-.tool-bracket-label { font-size: 12px !important; font-weight: 600; color: var(--text) !important; text-decoration: underline; margin-bottom: 4px; }
+.tool-bracket-label { font-size: 12px; font-weight: 600; color: var(--text); text-decoration: underline; margin-bottom: 6px; display: block; }
 
 @media (max-width: 800px) {
   .shell { grid-template-columns: 1fr; }
