@@ -55,7 +55,17 @@ export default function Sidebar() {
       const el = document.getElementById(s.id);
       if (el) observer.observe(el);
     });
-    return () => observer.disconnect();
+
+    const onScroll = () => {
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50)
+        setActiveId(sections[sections.length - 1].id);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   return (

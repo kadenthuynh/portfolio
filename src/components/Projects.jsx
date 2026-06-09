@@ -22,8 +22,24 @@ export default function Projects() {
             <Card className="h-full p-[18px]">
               <CardHeader>
                 <div className="proj-name">{p.name}</div>
+                {p.github && (
+                  <a
+                    href={p.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="proj-code"
+                  >
+                    View Code →
+                  </a>
+                )}
               </CardHeader>
-              <CardContent>{p.description}</CardContent>
+              <CardContent>
+                {Array.isArray(p.description)
+                  ? p.description.map((para, j) => (
+                      <p key={j} style={j > 0 ? { marginTop: "0.6em" } : undefined}>{para}</p>
+                    ))
+                  : p.description}
+              </CardContent>
               <CardFooter>
                 {p.tech.map((t) => (
                   <Badge key={t}>{t}</Badge>
