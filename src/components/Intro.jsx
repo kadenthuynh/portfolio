@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { meta, stats } from "../data/content";
+import { meta } from "../data/content";
 import { fadeUp, stagger } from "../motion";
+import BlockHead from "./BlockHead";
 import { Spotlight } from "./ui/spotlight";
-import { TextReveal } from "./ui/text-reveal";
 
 export default function Intro() {
   return (
@@ -14,34 +14,31 @@ export default function Intro() {
           variants={stagger}
           initial="hidden"
           animate="show"
-          custom={{ delayChildren: 0.1 }}
         >
-          <h1 style={{ position: "relative" }}>
-            <span className="b-num">00</span>
-            <TextReveal text={meta.tagline} />
-          </h1>
+          <BlockHead num="00" title={meta.tagline} />
           {meta.intro.map((para, i) => (
             <motion.p key={i} variants={fadeUp}>{para}</motion.p>
           ))}
-          {stats.length > 0 && (
-            <motion.div className="intro-stats" variants={stagger}>
-              {stats.map((s) => (
-                <motion.div className="istat" key={s.label} variants={fadeUp}>
-                  <div className="v">{s.value}</div>
-                  <div className="l">{s.label}</div>
-                </motion.div>
-              ))}
-            </motion.div>
-          )}
+          <motion.div className="intro-creds" variants={fadeUp}>
+            <img className="cred-seal" src="/ucsb-seal.png" alt="UC Santa Barbara seal" />
+            {meta.credentials.map((c) => (
+              <div className="cred" key={c.value}>
+                <div className="v">{c.value}</div>
+                <div className="l">{c.label}</div>
+              </div>
+            ))}
+            <div className="cred">
+              <div className="v cred-pin">
+                <span className="ping" />
+                {meta.location}
+              </div>
+              <div className="l">Hometown</div>
+            </div>
+          </motion.div>
         </motion.div>
-        <motion.div
-          className="intro-photo-placeholder"
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.55, delay: 0.28, ease: [0.25, 0.1, 0.25, 1] }}
-        >
-          <span>Photo</span>
-        </motion.div>
+        <div className="intro-figure" aria-hidden="true">
+          <div className="intro-portrait" />
+        </div>
       </div>
     </section>
   );

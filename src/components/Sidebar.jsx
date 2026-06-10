@@ -1,15 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Sun, Moon, Mail, Phone } from "lucide-react";
 
-const IconLinkedIn = () => (
-  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
-  </svg>
-);
-
 import { meta } from "../data/content";
 import { Button } from "./ui/button";
+import { Scales } from "./ui/scales";
 
 const sections = [
   { id: "intro", label: "About Me" },
@@ -19,6 +14,7 @@ const sections = [
   { id: "leadership", label: "Leadership" },
   { id: "projects", label: "Projects" },
   { id: "skills", label: "Skills" },
+  { id: "contact", label: "Contact" },
 ];
 
 function getInitialTheme() {
@@ -32,6 +28,7 @@ function getInitialTheme() {
 export default function Sidebar() {
   const [theme, setTheme] = useState(getInitialTheme);
   const [activeId, setActiveId] = useState("intro");
+  const clickGuard = useRef(0);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -45,6 +42,7 @@ export default function Sidebar() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
+        if (Date.now() < clickGuard.current) return;
         entries.forEach((e) => {
           if (e.isIntersecting) setActiveId(e.target.id);
         });
@@ -57,6 +55,7 @@ export default function Sidebar() {
     });
 
     const onScroll = () => {
+      if (Date.now() < clickGuard.current) return;
       if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50)
         setActiveId(sections[sections.length - 1].id);
     };
@@ -74,7 +73,17 @@ export default function Sidebar() {
         <div className="side-name">
           {meta.first} {meta.last}
         </div>
-        <div className="side-loc">{meta.location}</div>
+        <div className="side-contact-line">
+          <a href={`mailto:${meta.email}`}>
+            <Mail size={11} strokeWidth={1.7} />
+            {meta.email}
+          </a>
+          <span>|</span>
+          <a href={`tel:${meta.phone}`}>
+            <Phone size={11} strokeWidth={1.7} />
+            {meta.phone}
+          </a>
+        </div>
       </div>
 
       <nav className="side-nav" style={{ position: "relative" }}>
@@ -84,6 +93,10 @@ export default function Sidebar() {
             href={`#${s.id}`}
             className={activeId === s.id ? "active" : undefined}
             style={{ position: "relative" }}
+            onClick={() => {
+              clickGuard.current = Date.now() + 1200;
+              setActiveId(s.id);
+            }}
           >
             {activeId === s.id && (
               <motion.span
@@ -98,29 +111,8 @@ export default function Sidebar() {
         ))}
       </nav>
 
-      <div className="side-contact">
-        <div className="side-contact-head">
-          <span className="num">07</span>Contact
-        </div>
-        <div className="side-contact-grid">
-          <a className="side-link side-link-full" href={`mailto:${meta.email}`}>
-            <Mail size={13} strokeWidth={1.7} />
-            {meta.email}
-          </a>
-          <a className="side-link" href={`tel:${meta.phone}`}>
-            <Phone size={13} strokeWidth={1.7} />
-            {meta.phone}
-          </a>
-          <a
-            className="side-link"
-            href={meta.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <IconLinkedIn />
-            LinkedIn
-          </a>
-        </div>
+      <div className="side-figure" style={{ marginTop: "auto" }} aria-hidden="true">
+        <Scales />
       </div>
 
       <div className="side-foot">

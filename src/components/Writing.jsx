@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, FileText } from "lucide-react";
 import { writing } from "../data/content";
@@ -52,48 +52,33 @@ function EssayBody({ link }) {
   });
 }
 
-function WritingCard({ w, index, onOpen }) {
-  const [hovered, setHovered] = useState(false);
-
+function WritingEntry({ w, index, onOpen }) {
   return (
-    <motion.div
+    <motion.article
       className="w-card"
-      onHoverStart={() => setHovered(true)}
-      onHoverEnd={() => setHovered(false)}
+      role="button"
+      tabIndex={0}
       onClick={() => onOpen(w)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onOpen(w);
+        }
+      }}
       initial={{ opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
-      transition={{ duration: 0.38, delay: index * 0.05, ease: [0.25, 0.1, 0.25, 1] }}
+      transition={{ duration: 0.38, delay: index * 0.04, ease: [0.25, 0.1, 0.25, 1] }}
     >
-      <div className="w-card-front">
-        <motion.div
-          className="w-title"
-          animate={{ color: hovered ? "var(--accent)" : "var(--text)" }}
-          transition={{ duration: 0.15 }}
-        >
-          {w.title}
-        </motion.div>
-        <div className="w-tags">
-          <b>{w.course}</b> · {w.term}
-        </div>
-        <motion.div
-          className="w-read"
-          animate={{ color: hovered ? "var(--accent)" : "var(--text3)" }}
-          transition={{ duration: 0.15 }}
-        >
-          READ&nbsp;↗
-        </motion.div>
+      <div className="w-card-top">
+        <span>{w.term}</span>
+        <span className="w-card-read">Read →</span>
       </div>
-      <motion.div
-        className="w-card-desc"
-        animate={{ opacity: hovered ? 1 : 0 }}
-        transition={{ duration: 0.18 }}
-        style={{ pointerEvents: hovered ? "auto" : "none" }}
-      >
-        {w.description}
-      </motion.div>
-    </motion.div>
+      <h3 className="w-card-title">{w.title}</h3>
+      <div className="w-card-meta">
+        <b>{w.course}</b>
+      </div>
+    </motion.article>
   );
 }
 
@@ -109,13 +94,22 @@ export default function Writing() {
     document.body.style.overflow = "";
   };
 
+  useEffect(() => {
+    if (!active) return;
+    const onKey = (e) => {
+      if (e.key === "Escape") close();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [active]);
+
   return (
     <>
       <section className="block" id="writing">
         <BlockHead num="03" title="Selected Writing" />
         <div className="w-grid">
           {writing.map((w, i) => (
-            <WritingCard key={i} w={w} index={i} onOpen={open} />
+            <WritingEntry key={i} w={w} index={i} onOpen={open} />
           ))}
         </div>
       </section>
@@ -171,6 +165,7 @@ export default function Writing() {
                 </div>
               </div>
               <div className="modal-body">
+                <p className="modal-desc">{active.description}</p>
                 <EssayBody link={active.link} />
               </div>
             </motion.div>

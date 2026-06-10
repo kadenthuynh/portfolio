@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { education } from "../data/content";
 import BlockHead from "./BlockHead";
 import { Badge } from "./ui/badge";
+import { FoldMap } from "./ui/fold-map";
 
 export default function Education() {
   return (
@@ -68,6 +69,7 @@ export default function Education() {
           );
         })}
       </div>
+      <FoldMap />
     </section>
   );
 }

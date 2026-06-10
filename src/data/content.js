@@ -5,6 +5,9 @@ export const meta = {
   title: "Political Science & Philosophy @ UCSB",
   role: "Political Science & Philosophy\nUniversity of California, Santa Barbara",
   tagline: "About Me",
+  credentials: [
+    { value: "UC Santa Barbara", label: "B.A. of Political Science\nPhilosophy" },
+  ],
   location: "San Diego, CA",
   email: "kadenthuynh@gmail.com",
   phone: "(858) 888-3691",
@@ -223,6 +226,10 @@ export const skills = {
     "Seal of Biliteracy in Spanish",
     "SDIVSL Varsity Parliamentary Award",
   ],
+};
+
+export const contact = {
+  body: "I'm always glad to connect with attorneys, recruiters, or fellow students. Feel free to reach out!",
 };
 
 export const interests = [

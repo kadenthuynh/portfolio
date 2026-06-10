@@ -3,7 +3,6 @@ import { projects } from "../data/content";
 import BlockHead from "./BlockHead";
 import { Card, CardHeader, CardContent, CardFooter } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { TiltCard } from "./ui/tilt-card";
 
 export default function Projects() {
   return (
@@ -18,7 +17,6 @@ export default function Projects() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.4, delay: i * 0.09, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <TiltCard>
             <Card className="h-full p-[18px]">
               <CardHeader>
                 <div className="proj-name">{p.name}</div>
@@ -34,11 +32,18 @@ export default function Projects() {
                 )}
               </CardHeader>
               <CardContent>
-                {Array.isArray(p.description)
-                  ? p.description.map((para, j) => (
-                      <p key={j} style={j > 0 ? { marginTop: "0.6em" } : undefined}>{para}</p>
-                    ))
-                  : p.description}
+                {Array.isArray(p.description) ? (
+                  p.description.map((para, j) => (
+                    <div key={j} className="proj-para">
+                      <span className="proj-label">
+                        {j === 0 ? "Overview" : "Implementation"}
+                      </span>
+                      <p>{para}</p>
+                    </div>
+                  ))
+                ) : (
+                  p.description
+                )}
               </CardContent>
               <CardFooter>
                 {p.tech.map((t) => (
@@ -46,7 +51,6 @@ export default function Projects() {
                 ))}
               </CardFooter>
             </Card>
-            </TiltCard>
           </motion.div>
         ))}
       </div>

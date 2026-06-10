@@ -22,7 +22,7 @@ export default {
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
-        disp: ["'Space Grotesk'", "system-ui", "sans-serif"],
+        disp: ["'EB Garamond'", "Georgia", "serif"],
         mono: ["'IBM Plex Mono'", "ui-monospace", "monospace"],
       },
       screens: {
