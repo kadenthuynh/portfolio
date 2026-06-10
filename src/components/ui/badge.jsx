@@ -9,7 +9,7 @@ const badgeVariants = cva(
         default:
           "bg-surface2 border border-line text-muted",
         gold: "bg-accent-soft text-accent",
-        blue: "bg-[#1a2a3a] text-[#6aabdc]",
+        blue: "bg-[var(--badge-blue-bg)] text-[var(--badge-blue-text)]",
       },
     },
     defaultVariants: { variant: "default" },

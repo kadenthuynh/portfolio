@@ -27,18 +27,29 @@ export default function Intro() {
                 <div className="l">{c.label}</div>
               </div>
             ))}
-            <div className="cred">
-              <div className="v cred-pin">
-                <span className="ping" />
-                {meta.location}
-              </div>
-              <div className="l">Hometown</div>
-            </div>
           </motion.div>
         </motion.div>
-        <div className="intro-figure" aria-hidden="true">
-          <div className="intro-portrait" />
-        </div>
+        <motion.div
+          className="intro-figure"
+          variants={stagger}
+          initial="hidden"
+          animate="show"
+          transition={{ delayChildren: 0.2 }}
+        >
+          <motion.img
+            className="intro-portrait"
+            src="/portrait.jpg"
+            alt="Kaden Huynh"
+            variants={fadeUp}
+          />
+          <motion.div className="cred" variants={fadeUp}>
+            <div className="v cred-pin">
+              <span className="ping" />
+              {meta.location}
+            </div>
+            <div className="l">Hometown</div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

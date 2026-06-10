@@ -6,7 +6,7 @@ export const meta = {
   role: "Political Science & Philosophy\nUniversity of California, Santa Barbara",
   tagline: "About Me",
   credentials: [
-    { value: "UC Santa Barbara", label: "B.A. of Political Science\nPhilosophy" },
+    { value: "UC Santa Barbara", label: "B.A. in Political Science\nMinor in Philosophy" },
   ],
   location: "San Diego, CA",
   email: "kadenthuynh@gmail.com",
