@@ -8,9 +8,9 @@ import { Scales } from "./ui/scales";
 
 const sections = [
   { id: "intro", label: "About Me" },
-  { id: "experience", label: "Experience" },
   { id: "education", label: "Education" },
   { id: "writing", label: "Writing" },
+  { id: "experience", label: "Experience" },
   { id: "leadership", label: "Leadership" },
   { id: "projects", label: "Projects" },
   { id: "skills", label: "Skills" },
