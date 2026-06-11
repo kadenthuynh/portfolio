@@ -201,7 +201,7 @@ export const writing = [
     link: "/morals.pdf",
   },
   {
-    title: "In Defense of the Modern State",
+    title: "Defense of the Modern State",
     course: "Intro to Political Philosophy",
     term: "Fall 2024",
     description:
