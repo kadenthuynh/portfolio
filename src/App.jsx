@@ -16,9 +16,9 @@ export default function App() {
         <Sidebar />
         <main className="content">
           <Intro />
-          <Experience />
           <Education />
           <Writing />
+          <Experience />
           <Leadership />
           <Projects />
           <Skills />

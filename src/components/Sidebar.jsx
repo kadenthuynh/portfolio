@@ -101,7 +101,7 @@ export default function Sidebar() {
             {activeId === s.id && (
               <motion.span
                 layoutId="nav-indicator"
-                className="absolute left-[-32px] top-0 bottom-0 w-[2px] bg-accent rounded-r"
+                className="absolute left-[-32px] top-0 bottom-0 w-[2px] bg-accent rounded-r hidden sm:block"
                 transition={{ type: "spring", stiffness: 500, damping: 38 }}
               />
             )}

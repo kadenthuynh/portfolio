@@ -106,7 +106,7 @@ export default function Writing() {
   return (
     <>
       <section className="block" id="writing">
-        <BlockHead num="03" title="Selected Writing" />
+        <BlockHead num="03" title="Written Works" />
         <div className="w-grid">
           {writing.map((w, i) => (
             <WritingEntry key={i} w={w} index={i} onOpen={open} />
