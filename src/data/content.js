@@ -15,9 +15,9 @@ export const meta = {
   github: "https://github.com/kadenthuynh",
   bio: "UCSB student studying Political Science and Philosophy with a focus on political theory, law, and public service. Trilingual in English, Spanish, and Vietnamese, shaped by time across San Diego, Colombia, Spain, and Japan.",
   intro: [
-    "Hello! My name is Kaden and I'm currently pursuing a B.A. in Political Science at the University of California, Santa Barbara. I'm also minoring in Philosophy and deeply intrigued by morals and ethics. After I graduate, I plan to attend law school and pursue a career in corporate law.",
+    "Hello! My name is Kaden and I'm currently pursuing a B.A. in Political Science at the University of California, Santa Barbara, with a minor in Philosophy. After I graduate, I plan to attend law school and build a career in corporate law.",
     "Campus life has been a big part of my UCSB experience. I'm a member of the Pre-Law Society and Phi Alpha Delta law fraternity, and I find a lot of community in the Vietnamese Student Association and Chinese Student Union. When I'm not studying, I stay active on the volleyball court, in the weight room, at the rock climbing gym, or boxing with the Strikers Club.",
-    "Outside the classroom I've led youth organizations, competed in parliamentary debate across California, and led a cross-border fundraiser for Colombian youth programs. I'm passionate about community volunteering and have extensive experience in customer service.",
+    "Outside the classroom, I've led youth organizations, competed in parliamentary debate across California, and organized a cross-border fundraiser for Colombian youth programs. I'm passionate about community volunteering and have extensive experience in customer service.",
   ],
 };
 
@@ -36,6 +36,20 @@ export const education = [
       "Contemporary Political Theory",
       "Government & Politics of Japan",
     ],
+    activities: [
+      "Phi Alpha Delta Law Fraternity",
+      "Pre-Law Society",
+      "Vietnamese Student Association",
+      "Men's Beach Volleyball",
+      "Strikers Club",
+      "Gaucho Gaming",
+    ],
+  },
+  {
+    school: "International Christian University (UCEAP)",
+    location: "Tokyo, Japan",
+    degree: "Study Abroad",
+    period: "Aug 2026 – Dec 2026",
   },
   {
     school: "Universitat Autònoma de Barcelona (UCEAP)",
@@ -45,10 +59,13 @@ export const education = [
     coursework: ["Leadership & Negotiation Techniques", "Critical Thinking"],
   },
   {
-    school: "International Christian University (UCEAP)",
-    location: "Tokyo, Japan",
-    degree: "Study Abroad",
-    period: "Aug 2026 – Dec 2026",
+    school: "Westview High School",
+    degree: "High School Diploma",
+    location: "San Diego, CA",
+    period: "Aug 2020 – Jul 2024",
+    gpa: "4.3",
+    honors: ["AP Scholar with Distinction", "Seal of Biliteracy in Spanish", "SDIVSL Varsity Parliamentary Award"],
+    activities: ["National Speech & Debate Association"],
   },
 ];
 
@@ -59,8 +76,8 @@ export const experience = [
     location: "Santa Barbara, CA",
     period: "Sep 2026 – Jun 2027",
     bullets: [
-      "Will provide one-on-one writing support to students, assisting at every stage from prompt analysis and drafting to structure, argumentation, and final revision",
-      "Will assess individual student needs and develop targeted strategies to strengthen clarity, organization, and academic writing conventions",
+      "Provide one-on-one writing support to students, assisting at every stage from prompt analysis and drafting to structure, argumentation, and final revision",
+      "Assess individual student needs and develop targeted strategies to strengthen clarity, organization, and academic writing conventions",
     ],
   },
   {
@@ -69,8 +86,9 @@ export const experience = [
     location: "Oceanside, CA",
     period: "Dec 2021 – Dec 2025",
     bullets: [
-      "Supervised 10+ employees and onboarded 5 new hires across high-volume shifts",
-      "Analyzed delivery platform (Grubhub, DoorDash, Uber Eats) metrics and implemented UI optimizations that increased online orders by 25%",
+      "Supervised a team of 10+ employees in a fast-paced, customer-oriented environment, developing leadership and operational management qualities while handling thousands of dollars in sales transactions each shift",
+      "Onboarded 5 new employees on workplace procedures, improving communication and team coordination skills",
+      "Analyzed metrics across Grubhub, DoorDash, and Uber Eats to identify inefficiencies, implementing UI changes and optimizations that increased online orders by 25%",
     ],
   },
   {
@@ -79,8 +97,9 @@ export const experience = [
     location: "San Diego, CA",
     period: "Dec 2023 – Aug 2024",
     bullets: [
-      "Collaborated with 30+ employees across high-volume stations",
-      "Recognized for cleanliness and attention to detail",
+      "Collaborated with a team of over 30 employees across simultaneous high-volume stations, adapting quickly to shifting operational demands and maintaining efficiency during peak service periods",
+      "Delivered professional service to hundreds of customers per shift while maintaining composure and efficiency",
+      "Upheld cleanliness standards under health regulations, earning recognition for consistent attention to detail",
     ],
   },
 ];
@@ -92,9 +111,9 @@ export const leadership = [
     location: "San Diego, CA",
     period: "May 2019 – Present",
     bullets: [
-      "Led fundraising campaigns for Vietnam flood relief",
-      "Ran summer camps and weekly meetings for 60+ members",
-      "Mentored 30+ youth and taught Vietnamese language",
+      "Spearheaded community fundraising campaigns through prayers and banquets, generating thousands of dollars in direct relief aid for flood victims across Vietnam and supporting international humanitarian efforts",
+      "Planned and executed summer camps and weekly meetings for 60+ members, building project management and organizational skills while fostering a sense of community and belonging among youth participants",
+      "Mentored 30+ children and teenagers through positive role-modeling and Vietnamese language instruction, deepening cultural connection and preserving heritage within the Vietnamese diaspora in San Diego",
     ],
   },
   {
@@ -103,8 +122,18 @@ export const leadership = [
     location: "San Diego, CA",
     period: "Aug 2020 – Jun 2024",
     bullets: [
-      "Competed in parliamentary debate across California",
-      "Earned SDIVSL Varsity Parliamentary Award",
+      "Competed in Parliamentary Debate at tournaments across California, earning a varsity performance award against hundreds of peers while directly cultivating advanced argumentation, research, and public speaking skills",
+      "Researched and prepared cases on a rotating set of resolutions spanning domestic policy, international relations, and ethics, developing the ability to analyze unfamiliar topics quickly and refute complex philosophical arguments",
+    ],
+  },
+  {
+    role: "Coach",
+    org: "Kicks4Kids",
+    location: "San Diego, CA",
+    period: "Jun 2023 – Aug 2024",
+    bullets: [
+      "Supervised and coached a soccer camp of over 30 children",
+      "Taught leadership and communication skills through mentoring",
     ],
   },
   {
@@ -113,32 +142,71 @@ export const leadership = [
     location: "Cundinamarca, Colombia",
     period: "Jan 2023 – Jun 2023",
     bullets: [
-      "Co-founded a grassroots fundraiser supporting Colombian youth programs",
-      "Organized two San Diego fundraising events",
-      "Coordinated bilingual (Spanish/English) communication with the Colombia team",
+      "Co-founded a grassroots fundraising initiative from scratch, independently organizing two San Diego community events that generated hundreds of dollars in direct financial support for an international nonprofit organization",
+      "Coordinated ongoing bilingual communication in Spanish with Colombia-based team members and organizational leadership, demonstrating sustained professionalism across significant cultural and language barriers",
     ],
   },
 ];
 
 export const projects = [
   {
+    name: "Athena",
+    description: [
+      "A second brain for short-form video. Send it an Instagram or TikTok reel, a web link, or a PDF, and it pulls out the key details, files them under a life category, and resurfaces them later. The home screen is a holographic brain where every category is its own interactive node.",
+      "A Vercel serverless API passes incoming media to a Render worker that strips out video frames and audio. Claude reads each item and returns structured data, Google Places geocodes any locations onto a Mapbox map, and Supabase with PostGIS stores the results. The front end runs on React and Vite.",
+    ],
+    tech: ["React", "Vite", "Vercel", "Supabase", "PostGIS", "Claude API", "Google Places", "Mapbox"],
+    github: null,
+    live: null,
+  },
+  {
     name: "Legal Directory CRM",
     description: [
-      "Relationship management tool for professionals who need to track connections. Centralizes important contacts, relevant email threads, and follow-up events with a single organized dashboard.",
-      "Built in vanilla JavaScript with Supabase for cross-device cloud sync. Credentials are secured client-side using PBKDF2 key derivation and AES-GCM encryption. Google Calendar and Gmail API integrations run through Vercel serverless functions, and AI email drafting uses a detailed writing style guide embedded in the system prompt.",
+      "A relationship manager for professionals who juggle a lot of contacts. One dashboard tracks your key people, the email threads that matter, and the follow-ups you owe them.",
+      "The app runs on vanilla JavaScript and syncs across devices through Supabase. It encrypts your credentials in the browser with PBKDF2 key derivation and AES-GCM, so they never travel in the clear. Vercel serverless functions drive the Google Calendar and Gmail integrations, and the AI email drafter writes from a detailed style guide baked into its system prompt.",
     ],
     tech: ["Vanilla JS", "Supabase", "Claude API", "Google APIs", "Vercel"],
-    github: "https://github.com/kadenthuynh/legal",
+    github: null,
+    live: null,
+  },
+  {
+    name: "Payback",
+    description: [
+      "A shared-expense splitter for whoever always covers the bill. Log the charges, tag who was in on each, and Payback returns a clean per-person breakdown with tax, tip, fees, adjustments, and multiple currencies.",
+      "The app runs on vanilla JavaScript and Vite, keeps everything in the browser, and deploys as a static site on Vercel. It pulls live exchange rates from the Frankfurter API, holds receipt photos in IndexedDB, and exports any breakdown to a shareable PNG with html-to-image.",
+    ],
+    tech: ["Vanilla JS", "Vite", "IndexedDB", "Vercel"],
+    github: null,
+    live: null,
+  },
+  {
+    name: "LSAT Coach",
+    description: [
+      "A command-line LSAT prep system built as a set of Claude Code skills. It reads official LawHub score reports, flags every miss by question type and difficulty, and builds a spaced-repetition journal that drills your weakest areas first.",
+      "Three skills work together. One parses the score-report PDFs, one pulls real question text off LawHub through browser automation, and one runs an interactive daily quiz on 3/7/14-day spaced-repetition intervals, all on top of Claude.",
+    ],
+    tech: ["Claude API", "Claude Code", "Spaced Repetition"],
+    github: null,
+    live: null,
+  },
+  {
+    name: "Cleave",
+    description: [
+      "A co-op floor-climbing action RPG built on one idea: two players share a single soul. Solo, the soul fuses into one stronger character; together, it splits into two bodies that climb a ten-floor dungeon side by side, so no one races ahead.",
+      "A top-down 2D game written in TypeScript on the KAPLAY engine, with real-time co-op netcode over PartyKit. It packs three classes, a fourteen-node skill tree, room-shuffled roguelike floors across eight themed biomes with their own bosses, and a town hub with a shop and respec altar.",
+    ],
+    tech: ["TypeScript", "KAPLAY", "Vite", "PartyKit"],
+    github: null,
     live: null,
   },
   {
     name: "Portfolio Website",
     description: [
-      "Built to present academic work, professional experience, and projects to others. Highlights writing samples, leadership roles, and technical projects in a clean, navigable format.",
-      "Built with React and Vite, the site keeps all content in a single structured data file so updates never touch component logic. UI components include a 3D perspective tilt card driven by Framer Motion spring physics and a character-staggered text reveal. Tailwind CSS powers the dark, minimal design and the project deploys to Vercel on every push.",
+      "A single-page site that lays out academic writing, work experience, and projects in a clean, navigable format.",
+      "React and Vite power it, with every piece of content in one structured data file so edits never touch component logic. Framer Motion handles the motion: a tri-fold travel map whose California, Spain, and Japan panels unfold into linked flight arcs, staggered fade-ins down the page, and a cursor-tracking spotlight on the hero. Tailwind CSS styles a minimal design with light and dark themes, and every push to main deploys to Vercel.",
     ],
     tech: ["React", "Vite", "Tailwind CSS", "Framer Motion", "Vercel"],
-    github: "https://github.com/kadenthuynh/portfolio",
+    github: null,
     live: null,
   },
 ];
@@ -217,14 +285,10 @@ export const skills = {
     { lang: "Vietnamese", level: "Proficient" },
   ],
   tools: [
-    { label: "Microsoft Office", items: ["Microsoft Word", "Excel", "PowerPoint"] },
-    { label: "Google Workspace", items: ["Google Docs", "Sheets", "Slides"] },
-    { label: "Developer Tools", items: ["VS Code", "GitHub", "Vercel", "Supabase"] },
-  ],
-  awards: [
-    "AP Scholar with Distinction",
-    "Seal of Biliteracy in Spanish",
-    "SDIVSL Varsity Parliamentary Award",
+    { label: "Microsoft Office", items: ["Word", "Excel", "PowerPoint"] },
+    { label: "Google Workspace", items: ["Docs", "Sheets", "Slides"] },
+    { label: "Web Development", items: ["JavaScript", "TypeScript", "React", "Node.js", "Tailwind CSS"] },
+    { label: "Developer Tools", items: ["VS Code", "GitHub", "Vercel", "Supabase", "Claude API"] },
   ],
 };
 

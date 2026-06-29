@@ -20,6 +20,16 @@ export default function Projects() {
             <Card className="h-full p-[18px]">
               <CardHeader>
                 <div className="proj-name">{p.name}</div>
+                {p.live && (
+                  <a
+                    href={p.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="proj-code"
+                  >
+                    View Live →
+                  </a>
+                )}
                 {p.github && (
                   <a
                     href={p.github}

@@ -65,6 +65,14 @@ export default function Education() {
                   ))}
                 </div>
               )}
+              {e.activities && e.activities.length > 0 && (
+                <div className="tags">
+                  <span className="tag-label">Activities</span>
+                  {e.activities.map((a) => (
+                    <Badge key={a}>{a}</Badge>
+                  ))}
+                </div>
+              )}
             </motion.div>
           );
         })}
