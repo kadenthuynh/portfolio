@@ -52,10 +52,10 @@ function EssayBody({ link }) {
   });
 }
 
-function WritingEntry({ w, index, onOpen }) {
+function MiniCard({ w, index, onOpen }) {
   return (
     <motion.article
-      className="w-card"
+      className="feat-card"
       role="button"
       tabIndex={0}
       onClick={() => onOpen(w)}
@@ -70,14 +70,12 @@ function WritingEntry({ w, index, onOpen }) {
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.38, delay: index * 0.04, ease: [0.25, 0.1, 0.25, 1] }}
     >
-      <div className="w-card-top">
-        <span>{w.term}</span>
-        <span className="w-card-read">Read →</span>
+      <div className="feat-card-top">
+        <span className="feat-card-kicker">{w.term}</span>
+        <span className="feat-card-cue">Read →</span>
       </div>
-      <h3 className="w-card-title">{w.title}</h3>
-      <div className="w-card-meta">
-        <b>{w.course}</b>
-      </div>
+      <h4 className="feat-card-title">{w.title}</h4>
+      <p className="feat-card-tag">{w.course}</p>
     </motion.article>
   );
 }
@@ -103,14 +101,54 @@ export default function Writing() {
     return () => window.removeEventListener("keydown", onKey);
   }, [active]);
 
+  const featured = writing.find((w) => w.featured);
+  const rest = writing.filter((w) => !w.featured);
+
   return (
     <>
       <section className="block" id="writing">
-        <BlockHead num="03" title="Written Works" />
-        <div className="w-grid">
-          {writing.map((w, i) => (
-            <WritingEntry key={i} w={w} index={i} onOpen={open} />
-          ))}
+        <BlockHead num="02" title="Written Works" />
+        <div className="feat">
+          {featured && (
+            <motion.article
+              className="feat-hero feat-hero--split feat-hero--essay"
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.42, ease: [0.25, 0.1, 0.25, 1] }}
+            >
+              <div className="feat-hero-main">
+                <div className="feat-hero-top">
+                  <span className="feat-kicker">Featured Essay</span>
+                  <span className="feat-term">{featured.term}</span>
+                </div>
+                <h3 className="feat-hero-title">{featured.title}</h3>
+                <span className="feat-hero-course">{featured.course}</span>
+                <p className="feat-hero-desc">{featured.description}</p>
+                <button className="feat-hero-cta" onClick={() => open(featured)}>
+                  Read essay →
+                </button>
+              </div>
+              {featured.interlocutors && (
+                <aside className="essay-interlocutors">
+                  <span className="ei-label">In Conversation With</span>
+                  <ul>
+                    {featured.interlocutors.map((x) => (
+                      <li key={x.author}>
+                        <span className="ei-author">{x.author}</span>
+                        <span className="ei-work">{x.work}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </aside>
+              )}
+            </motion.article>
+          )}
+          <div className="feat-grid">
+            {rest.map((w, i) => (
+              <MiniCard key={i} w={w} index={i} onOpen={open} />
+            ))}
+          </div>
         </div>
       </section>
 

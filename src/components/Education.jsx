@@ -7,7 +7,7 @@ import { FoldMap } from "./ui/fold-map";
 export default function Education() {
   return (
     <section className="block" id="education">
-      <BlockHead num="02" title="Education" />
+      <BlockHead num="01" title="Education" />
       <div>
         {education.map((e, i) => {
           const abroad = e.degree === "Study Abroad";

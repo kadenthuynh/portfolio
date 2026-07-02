@@ -9,7 +9,7 @@ export default function Skills() {
       {/* Languages: full-width, one column per language */}
       <div className="mb-8">
         <div className="sg-label">Languages</div>
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 tablet:grid-cols-3 gap-6">
           {skills.languages.map((l) => (
             <div key={l.lang} className="lang-item">
               <span className="lang-name">{l.lang}</span>

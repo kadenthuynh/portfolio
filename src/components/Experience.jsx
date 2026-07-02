@@ -5,7 +5,7 @@ import BlockHead from "./BlockHead";
 export default function Experience() {
   return (
     <section className="block" id="experience">
-      <BlockHead num="01" title="Experience" />
+      <BlockHead num="03" title="Experience" />
       <div>
         {experience.map((e, i) => (
           <motion.div

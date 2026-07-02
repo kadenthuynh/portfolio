@@ -26,8 +26,11 @@ const PANELS = [
 ];
 
 const GAP = 16; // must match .fold-row gap
-const PAD = 15; // panel border + padding
-const VBW = 300; // panel svg viewBox width
+const PAD_X = 12; // panel horizontal padding (matches .fold-panel)
+const PAD_TOP = 10; // panel top padding (matches .fold-panel)
+const ART_W = 300; // map artwork width in viewBox units
+const VBW = 460; // viewBox width — extra horizontal room keeps full-width panels short
+const VBX = (ART_W - VBW) / 2; // shift so the artwork stays centered
 
 /**
  * Tri-fold travel map: California, Spain, and Japan as line-work outlines
@@ -52,10 +55,10 @@ export function FoldMap() {
   let arcs = [];
   if (dims) {
     const panelW = (dims.w - 2 * GAP) / 3;
-    const scale = (panelW - 2 * PAD) / VBW;
+    const scale = (panelW - 2 * PAD_X) / VBW;
     const pos = (i) => ({
-      x: i * (panelW + GAP) + PAD + PANELS[i].dot.x * scale,
-      y: PAD + PANELS[i].dot.y * scale,
+      x: i * (panelW + GAP) + PAD_X + (PANELS[i].dot.x - VBX) * scale,
+      y: PAD_TOP + PANELS[i].dot.y * scale,
     });
     arcs = PANELS.slice(0, -1).map((_, i) => {
       const a = pos(i);
@@ -97,7 +100,7 @@ export function FoldMap() {
             {...fold(i)}
             style={{ transformOrigin: i === 0 ? "right center" : i === 2 ? "left center" : "center" }}
           >
-            <svg viewBox={`0 0 ${VBW} 220`} fill="none">
+            <svg viewBox={`${VBX} 0 ${VBW} 220`} fill="none">
               <motion.path
                 d={p.outline}
                 stroke="var(--text3)"

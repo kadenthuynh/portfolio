@@ -16,8 +16,9 @@ export const meta = {
   bio: "UCSB student studying Political Science and Philosophy with a focus on political theory, law, and public service. Trilingual in English, Spanish, and Vietnamese, shaped by time across San Diego, Colombia, Spain, and Japan.",
   intro: [
     "Hello! My name is Kaden and I'm currently pursuing a B.A. in Political Science at the University of California, Santa Barbara, with a minor in Philosophy. After I graduate, I plan to attend law school and build a career in corporate law.",
-    "Campus life has been a big part of my UCSB experience. I'm a member of the Pre-Law Society and Phi Alpha Delta law fraternity, and I find a lot of community in the Vietnamese Student Association and Chinese Student Union. When I'm not studying, I stay active on the volleyball court, in the weight room, at the rock climbing gym, or boxing with the Strikers Club.",
-    "Outside the classroom, I've led youth organizations, competed in parliamentary debate across California, and organized a cross-border fundraiser for Colombian youth programs. I'm passionate about community volunteering and have extensive experience in customer service.",
+    "Campus life has been a big part of my UCSB experience. I'm a member of the Pre-Law Society and Phi Alpha Delta law fraternity, and I find a lot of community in the Vietnamese Student Association. When I'm not studying, I stay active on the volleyball court, in the weight room, or boxing with the Strikers Club.",
+    "Outside the classroom, I've led youth organizations, competed in parliamentary debate, and organized a cross-border fundraiser for Colombian youth programs. I'm passionate about community volunteering and have extensive experience in customer service.",
+    "I also spend a lot of my time building software. Most of my projects start as tools I wish existed and grow into full applications. I taught myself to code and work hand in hand with AI, using Claude to design, build, and ship each one end to end.",
   ],
 };
 
@@ -151,18 +152,21 @@ export const leadership = [
 export const projects = [
   {
     name: "Athena",
+    featured: true,
+    tagline: "A knowledge system that ingests short-form video, links, and PDFs, then transcribes, summarizes, and categorizes each into a searchable, mapped archive.",
     description: [
-      "A second brain for short-form video. Send it an Instagram or TikTok reel, a web link, or a PDF, and it pulls out the key details, files them under a life category, and resurfaces them later. The home screen is a holographic brain where every category is its own interactive node.",
-      "A Vercel serverless API passes incoming media to a Render worker that strips out video frames and audio. Claude reads each item and returns structured data, Google Places geocodes any locations onto a Mapbox map, and Supabase with PostGIS stores the results. The front end runs on React and Vite.",
+      "A personal knowledge system for short-form media. Send it an Instagram or TikTok reel, a web link, or a PDF. It transcribes, summarizes, and files each item under a life category, then resurfaces it from a searchable, mapped archive built for fast retrieval. Launched to 10+ private-beta users, with classification accuracy and the review workflow refined from real usage.",
+      "A Vercel serverless API passes incoming media to a Render worker that strips out video frames and audio. Claude reads each item and returns structured data, Mapbox geocodes any locations onto a map, and Supabase with PostGIS stores the results. The front end runs on React and Vite.",
     ],
-    tech: ["React", "Vite", "Vercel", "Supabase", "PostGIS", "Claude API", "Google Places", "Mapbox"],
+    tech: ["React", "Vite", "Vercel", "Supabase", "PostGIS", "Claude API", "Mapbox"],
     github: null,
     live: null,
   },
   {
     name: "Legal Directory CRM",
+    tagline: "A personal legal CRM managing a professional network through a searchable directory, inbox, and follow-up scheduling.",
     description: [
-      "A relationship manager for professionals who juggle a lot of contacts. One dashboard tracks your key people, the email threads that matter, and the follow-ups you owe them.",
+      "A personal legal CRM that manages a growing network of 50+ attorneys, judges, and mentors. One dashboard tracks key contacts, the email threads that matter, and calendar-based follow-ups. It cuts outreach drafting time roughly 90% by turning meeting and contact notes into structured records and context-aware draft emails.",
       "The app runs on vanilla JavaScript and syncs across devices through Supabase. It encrypts your credentials in the browser with PBKDF2 key derivation and AES-GCM, so they never travel in the clear. Vercel serverless functions drive the Google Calendar and Gmail integrations, and the AI email drafter writes from a detailed style guide baked into its system prompt.",
     ],
     tech: ["Vanilla JS", "Supabase", "Claude API", "Google APIs", "Vercel"],
@@ -171,6 +175,7 @@ export const projects = [
   },
   {
     name: "Payback",
+    tagline: "A shared-expense splitter that returns a clean per-person breakdown with tax, tip, fees, and currencies.",
     description: [
       "A shared-expense splitter for whoever always covers the bill. Log the charges, tag who was in on each, and Payback returns a clean per-person breakdown with tax, tip, fees, adjustments, and multiple currencies.",
       "The app runs on vanilla JavaScript and Vite, keeps everything in the browser, and deploys as a static site on Vercel. It pulls live exchange rates from the Frankfurter API, holds receipt photos in IndexedDB, and exports any breakdown to a shareable PNG with html-to-image.",
@@ -181,6 +186,7 @@ export const projects = [
   },
   {
     name: "LSAT Coach",
+    tagline: "A CLI LSAT-prep system of Claude Code skills that drills your weakest question types via spaced repetition.",
     description: [
       "A command-line LSAT prep system built as a set of Claude Code skills. It reads official LawHub score reports, flags every miss by question type and difficulty, and builds a spaced-repetition journal that drills your weakest areas first.",
       "Three skills work together. One parses the score-report PDFs, one pulls real question text off LawHub through browser automation, and one runs an interactive daily quiz on 3/7/14-day spaced-repetition intervals, all on top of Claude.",
@@ -191,21 +197,12 @@ export const projects = [
   },
   {
     name: "Cleave",
+    tagline: "A co-op floor-climbing action RPG built on one idea: two players share a single soul.",
     description: [
       "A co-op floor-climbing action RPG built on one idea: two players share a single soul. Solo, the soul fuses into one stronger character; together, it splits into two bodies that climb a ten-floor dungeon side by side, so no one races ahead.",
       "A top-down 2D game written in TypeScript on the KAPLAY engine, with real-time co-op netcode over PartyKit. It packs three classes, a fourteen-node skill tree, room-shuffled roguelike floors across eight themed biomes with their own bosses, and a town hub with a shop and respec altar.",
     ],
     tech: ["TypeScript", "KAPLAY", "Vite", "PartyKit"],
-    github: null,
-    live: null,
-  },
-  {
-    name: "Portfolio Website",
-    description: [
-      "A single-page site that lays out academic writing, work experience, and projects in a clean, navigable format.",
-      "React and Vite power it, with every piece of content in one structured data file so edits never touch component logic. Framer Motion handles the motion: a tri-fold travel map whose California, Spain, and Japan panels unfold into linked flight arcs, staggered fade-ins down the page, and a cursor-tracking spotlight on the hero. Tailwind CSS styles a minimal design with light and dark themes, and every push to main deploys to Vercel.",
-    ],
-    tech: ["React", "Vite", "Tailwind CSS", "Framer Motion", "Vercel"],
     github: null,
     live: null,
   },
@@ -222,11 +219,19 @@ export const writing = [
   },
   {
     title: "Limits of Government",
+    featured: true,
     course: "Contemporary Political Theory",
     term: "Winter 2026",
     description:
-      "Argues that market freedom produces not genuine liberty but structural inequality and economic domination.",
+      "This essay asks what the strongest social criticisms of Milton Friedman's liberal individualism are, and what political thought a society should adopt in its place. Drawing on G. A. Cohen and Nancy Fraser, I argue that market freedom leads not to genuine liberty, but to inequality and economic domination. Turning to André Gorz and David Miller, I further assert that socialism offers the basis for a better society, one grounded in equality, cooperation, and a more meaningful conception of freedom than the market can provide.",
     link: "/limits-of-government.pdf",
+    interlocutors: [
+      { author: "Milton Friedman", work: "Capitalism and Freedom" },
+      { author: "G. A. Cohen", work: "Why Not Socialism?" },
+      { author: "Nancy Fraser", work: "Cannibal Capitalism" },
+      { author: "André Gorz", work: "The New Agenda" },
+      { author: "David Miller", work: "The Relevance of Socialism" },
+    ],
   },
   {
     title: "Japan's Political Reinvention",
