@@ -31,17 +31,16 @@ export default function Education() {
                     )}
                   </div>
                   {!abroad && (
-                    <>
-                      <div className="meta-line">
-                        {e.degree}
-                        {e.location && ` · ${e.location}`}
-                      </div>
+                    <div className="meta-line">
+                      {e.degree}
+                      {e.location && ` · ${e.location}`}
                       {e.gpa && (
-                        <div className="edu-gpa">
-                          GPA <strong>{e.gpa}</strong>
-                        </div>
+                        <>
+                          {" · GPA "}
+                          <span className="gpa">{e.gpa}</span>
+                        </>
                       )}
-                    </>
+                    </div>
                   )}
                   {abroad && e.location && (
                     <div className="meta-line">{e.location}</div>
