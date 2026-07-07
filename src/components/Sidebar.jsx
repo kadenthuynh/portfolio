@@ -19,7 +19,7 @@ const sections = [
 
 function getInitialTheme() {
   try {
-    return localStorage.getItem("kh-theme") || "light";
+    return localStorage.getItem("kh-theme") || "dark";
   } catch {
     return "dark";
   }

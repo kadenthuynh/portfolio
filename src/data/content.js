@@ -61,7 +61,6 @@ export const education = [
   },
   {
     school: "Westview High School",
-    degree: "High School Diploma",
     location: "San Diego, CA",
     period: "Aug 2020 – Jul 2024",
     gpa: "4.3",
