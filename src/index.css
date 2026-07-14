@@ -307,8 +307,15 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 800px) {
   .shell { grid-template-columns: 1fr; }
-  .side { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--line); padding: 20px 24px; }
-  .side-nav { margin-top: 0; margin-bottom: 0; }
+  .side { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--line); padding: 20px 24px; gap: 10px; }
+  .side-figure { display: none; }
+  .side-nav { flex-direction: row; flex-wrap: wrap; gap: 0 18px; margin-top: 4px; margin-bottom: 0; }
+  .side-nav a { padding: 5px 0; }
+  .side-nav .num { display: none; }
+  .side-foot { position: absolute; top: 16px; right: 20px; padding-top: 0; border-top: none; }
+  .side-foot > span { display: none; }
+  .side { position: relative; }
+  .b-num { position: static; margin-right: 10px; }
   .intro, .block { padding-left: 24px; padding-right: 24px; }
   .intro { padding-top: 36px; padding-bottom: 32px; }
   .intro-inner { flex-direction: column; }
@@ -329,7 +336,6 @@ a { color: inherit; text-decoration: none; }
   .side { padding: 16px; }
   .side-name { font-size: 28px; }
   .side-contact-line { flex-wrap: wrap; justify-content: flex-start; }
-  .b-num { left: -16px; }
   .modal-body { padding: 20px 20px 32px; }
   .modal { border-radius: 10px; }
   .modal-head { padding: 14px 16px; }
