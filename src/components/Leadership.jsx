@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { leadership } from "../data/content";
 import BlockHead from "./BlockHead";
 
@@ -8,14 +7,7 @@ export default function Leadership() {
       <BlockHead num="04" title="Leadership & Service" />
       <div>
         {leadership.map((l, i) => (
-          <motion.div
-            className="row"
-            key={i}
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.4, delay: i * 0.07, ease: [0.25, 0.1, 0.25, 1] }}
-          >
+          <div className="row" key={i}>
             <div className="row-top">
               <div>
                 <div className="row-role">{l.role}</div>
@@ -33,7 +25,7 @@ export default function Leadership() {
                 ))}
               </ul>
             )}
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>

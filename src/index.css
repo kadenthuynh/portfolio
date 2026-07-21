@@ -340,3 +340,8 @@ a { color: inherit; text-decoration: none; }
   .modal { border-radius: 10px; }
   .modal-head { padding: 14px 16px; }
 }
+
+@media print {
+  *, *::before, *::after { opacity: 1 !important; transform: none !important; }
+  .side-figure, .theme-btn { display: none; }
+}
