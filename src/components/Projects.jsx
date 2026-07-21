@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { projects } from "../data/content";
+import useModalFocus from "../hooks/useModalFocus";
 import BlockHead from "./BlockHead";
 import { Badge } from "./ui/badge";
 import { Button, LinkButton } from "./ui/button";
@@ -64,6 +65,7 @@ function ProjectCard({ p, index, onOpen }) {
 
 export default function Projects() {
   const [active, setActive] = useState(null);
+  const modalRef = useModalFocus(!!active);
 
   const featured = projects.find((p) => p.featured);
   const rest = projects.filter((p) => !p.featured);
@@ -143,6 +145,8 @@ export default function Projects() {
           >
             <motion.div
               className="modal"
+              ref={modalRef}
+              tabIndex={-1}
               role="dialog"
               aria-modal="true"
               aria-labelledby="proj-modal-title"

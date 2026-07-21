@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, FileText } from "lucide-react";
 import { writing } from "../data/content";
+import useModalFocus from "../hooks/useModalFocus";
 import { essayContent } from "../data/essays";
 import BlockHead from "./BlockHead";
 import { Button, LinkButton } from "./ui/button";
@@ -82,6 +83,7 @@ function MiniCard({ w, index, onOpen }) {
 
 export default function Writing() {
   const [active, setActive] = useState(null);
+  const modalRef = useModalFocus(!!active);
 
   const open = (w) => {
     setActive(w);
@@ -164,6 +166,8 @@ export default function Writing() {
           >
             <motion.div
               className="modal"
+              ref={modalRef}
+              tabIndex={-1}
               role="dialog"
               aria-modal="true"
               aria-labelledby="modal-title"
