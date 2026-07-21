@@ -23,13 +23,6 @@ export default function BlockHead({ num, title }) {
       >
         {title}
       </motion.span>
-      <motion.span
-        className="b-rule"
-        initial={{ scaleX: 0 }}
-        animate={inView ? { scaleX: 1 } : {}}
-        transition={{ duration: 0.65, delay: 0.12, ease: [0.25, 0.1, 0.25, 1] }}
-        style={{ transformOrigin: "left" }}
-      />
     </div>
   );
 }
