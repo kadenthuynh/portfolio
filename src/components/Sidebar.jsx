@@ -24,11 +24,8 @@ const sections = [
 ];
 
 function getInitialTheme() {
-  try {
-    return localStorage.getItem("kh-theme") || "dark";
-  } catch {
-    return "dark";
-  }
+  // The blocking script in index.html already resolved this before paint.
+  return document.documentElement.getAttribute("data-theme") || "dark";
 }
 
 export default function Sidebar() {

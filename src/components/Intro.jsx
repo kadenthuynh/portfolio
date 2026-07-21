@@ -20,7 +20,18 @@ export default function Intro() {
             <motion.p key={i} variants={fadeUp}>{para}</motion.p>
           ))}
           <motion.div className="intro-creds" variants={fadeUp}>
-            <img className="cred-seal" src="/ucsb-seal.png" alt="UC Santa Barbara seal" />
+            <picture>
+              <source srcSet="/ucsb-seal.webp" type="image/webp" />
+              <img
+                className="cred-seal"
+                src="/ucsb-seal.png"
+                alt="UC Santa Barbara seal"
+                width="92"
+                height="92"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
             {meta.credentials.map((c) => (
               <div className="cred" key={c.value}>
                 <div className="v">{c.value}</div>
@@ -36,12 +47,19 @@ export default function Intro() {
           animate="show"
           transition={{ delayChildren: 0.2 }}
         >
-          <motion.img
-            className="intro-portrait"
-            src="/portrait.jpg"
-            alt="Kaden Huynh"
-            variants={fadeUp}
-          />
+          <picture>
+            <source srcSet="/portrait.webp" type="image/webp" />
+            <motion.img
+              className="intro-portrait"
+              src="/portrait.jpg"
+              alt="Kaden Huynh"
+              width="358"
+              height="448"
+              loading="eager"
+              decoding="async"
+              variants={fadeUp}
+            />
+          </picture>
           <motion.div className="cred" variants={fadeUp}>
             <div className="v cred-pin">
               <span className="ping" />

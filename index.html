@@ -7,11 +7,48 @@
     <meta property="og:title" content="Kaden Huynh" />
     <meta property="og:description" content="UCSB Political Science and Philosophy student preparing for a career in corporate law. Academic writing, leadership, and professional experience." />
     <meta property="og:type" content="website" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta property="og:url" content="https://kaden.me/" />
+    <meta property="og:site_name" content="Kaden Huynh" />
+    <meta property="og:image" content="https://kaden.me/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kaden Huynh" />
+    <meta name="twitter:description" content="UCSB Political Science and Philosophy student preparing for a career in corporate law. Academic writing, leadership, and professional experience." />
+    <meta name="twitter:image" content="https://kaden.me/og.png" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#131312" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://kaden.me/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" href="/fonts/eb-garamond-latin-var.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin />
+    <script>
+      // Set the theme before first paint so returning readers never see a flash.
+      (function () {
+        var t;
+        try { t = localStorage.getItem("kh-theme"); } catch (e) { /* ignore */ }
+        if (t !== "light" && t !== "dark") {
+          t = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
     <title>Kaden Huynh</title>
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <div style="max-width: 32rem; margin: 12vh auto; padding: 0 24px; font-family: Georgia, 'Times New Roman', serif; color: #f1f0ea; line-height: 1.7;">
+        <h1 style="font-size: 38px; font-weight: 600; letter-spacing: -0.01em;">Kaden Huynh</h1>
+        <div style="width: 132px; height: 2px; background: #c8a96e; margin: 20px 0;"></div>
+        <p style="color: #d4d2c7;">This site needs JavaScript to render. In the meantime:</p>
+        <p style="margin-top: 16px;">
+          <a href="mailto:kadenthuynh@gmail.com" style="color: #c8a96e;">kadenthuynh@gmail.com</a>
+          &nbsp;·&nbsp;
+          <a href="/resume.pdf" style="color: #c8a96e;">Resume (PDF)</a>
+        </p>
+      </div>
+    </noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
