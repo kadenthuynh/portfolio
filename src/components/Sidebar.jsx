@@ -76,9 +76,9 @@ export default function Sidebar() {
   return (
     <aside className="side">
       <div>
-        <div className="side-name">
+        <h1 className="side-name">
           {meta.first} {meta.last}
-        </div>
+        </h1>
         <div className="side-role">{meta.role}</div>
         <div className="side-contact-line">
           <span className="side-contact-group">

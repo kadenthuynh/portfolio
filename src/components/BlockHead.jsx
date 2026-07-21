@@ -15,14 +15,14 @@ export default function BlockHead({ num, title }) {
       >
         {num}
       </motion.span>
-      <motion.span
+      <motion.h2
         className="b-title"
         initial={{ opacity: 0, x: -10 }}
         animate={inView ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 0.32, delay: 0.06, ease: [0.25, 0.1, 0.25, 1] }}
       >
         {title}
-      </motion.span>
+      </motion.h2>
     </div>
   );
 }
