@@ -22,8 +22,6 @@ export const meta = {
   ],
 };
 
-export const stats = [];
-
 export const education = [
   {
     school: "University of California, Santa Barbara",
@@ -299,13 +297,3 @@ export const skills = {
 export const contact = {
   body: "I'm always glad to connect with attorneys, recruiters, or fellow students. Feel free to reach out!",
 };
-
-export const interests = [
-  "Volunteering",
-  "Competitive Boxing",
-  "Bouldering",
-  "Volleyball",
-  "Cultural Lion Dancing",
-  "Content Creation",
-  "Travelling",
-];
