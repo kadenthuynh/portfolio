@@ -72,7 +72,7 @@ export const experience = [
     role: "Writing Tutor",
     company: "UCSB Campus Learning Assistance Services (CLAS)",
     location: "Santa Barbara, CA",
-    period: "Incoming · Sep 2026 – Jun 2027",
+    period: "Incoming · Sep 2026",
     bullets: [
       "Selected to provide one-on-one writing support to students at every stage, from prompt analysis and drafting to structure, argumentation, and final revision",
       "Role centers on assessing individual student needs and developing targeted strategies to strengthen clarity, organization, and academic writing conventions",
