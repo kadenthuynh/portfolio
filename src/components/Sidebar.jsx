@@ -1,16 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Sun, Moon, Mail, Phone, FileText } from "lucide-react";
+import { Sun, Moon, Mail, Phone } from "lucide-react";
 
 import { meta } from "../data/content";
 import { Button } from "./ui/button";
 import { Scales } from "./ui/scales";
-
-const IconLinkedIn = () => (
-  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
-  </svg>
-);
 
 const sections = [
   { id: "intro", label: "About Me" },
@@ -76,30 +70,16 @@ export default function Sidebar() {
         <h1 className="side-name">
           {meta.first} {meta.last}
         </h1>
-        <div className="side-role">{meta.role}</div>
         <div className="side-contact-line">
-          <span className="side-contact-group">
-            <a href={`mailto:${meta.email}`}>
-              <Mail size={11} strokeWidth={1.7} />
-              {meta.email}
-            </a>
-            <span>|</span>
-            <a href={`tel:${meta.phone}`}>
-              <Phone size={11} strokeWidth={1.7} />
-              {meta.phone}
-            </a>
-          </span>
-          <span className="side-contact-group">
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-              <FileText size={11} strokeWidth={1.7} />
-              Resume
-            </a>
-            <span>|</span>
-            <a href={meta.linkedin} target="_blank" rel="noopener noreferrer">
-              <IconLinkedIn />
-              LinkedIn
-            </a>
-          </span>
+          <a href={`mailto:${meta.email}`}>
+            <Mail size={11} strokeWidth={1.7} />
+            {meta.email}
+          </a>
+          <span>|</span>
+          <a href={`tel:${meta.phone}`}>
+            <Phone size={11} strokeWidth={1.7} />
+            {meta.phone}
+          </a>
         </div>
       </div>
 
