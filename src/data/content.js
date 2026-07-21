@@ -22,8 +22,6 @@ export const meta = {
   ],
 };
 
-export const stats = [];
-
 export const education = [
   {
     school: "University of California, Santa Barbara",
@@ -165,8 +163,8 @@ export const projects = [
     name: "Legal Directory CRM",
     tagline: "A personal legal CRM managing a professional network through a searchable directory, inbox, and follow-up scheduling.",
     description: [
-      "A personal legal CRM that manages a growing network of 50+ attorneys, judges, and mentors. One dashboard tracks key contacts, the email threads that matter, and calendar-based follow-ups. It cuts outreach drafting time roughly 90% by turning meeting and contact notes into structured records and context-aware draft emails.",
-      "The app runs on vanilla JavaScript and syncs across devices through Supabase. It encrypts your credentials in the browser with PBKDF2 key derivation and AES-GCM, so they never travel in the clear. Vercel serverless functions drive the Google Calendar and Gmail integrations, and the AI email drafter writes from a detailed style guide baked into its system prompt.",
+      "A personal legal CRM for tracking professional contacts. One dashboard holds the contact directory, the email threads that matter, and calendar-based follow-ups. Claude turns loose meeting and contact notes into structured records, then surfaces the relevant history for a contact ahead of an interaction, so prior context is retrieved rather than reconstructed from memory.",
+      "The app runs on vanilla JavaScript and syncs across devices through Supabase. It encrypts your credentials in the browser with PBKDF2 key derivation and AES-GCM, so they never travel in the clear. Vercel serverless functions drive the Google Calendar and Gmail integrations, and the Claude API calls run on context assembled per contact from the stored records rather than on raw thread dumps.",
     ],
     tech: ["Vanilla JS", "Supabase", "Claude API", "Google APIs", "Vercel"],
     github: null,
@@ -299,13 +297,3 @@ export const skills = {
 export const contact = {
   body: "I'm always glad to connect with attorneys, recruiters, or fellow students. Feel free to reach out!",
 };
-
-export const interests = [
-  "Volunteering",
-  "Competitive Boxing",
-  "Bouldering",
-  "Volleyball",
-  "Cultural Lion Dancing",
-  "Content Creation",
-  "Travelling",
-];
