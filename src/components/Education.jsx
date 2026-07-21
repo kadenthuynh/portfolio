@@ -11,6 +11,7 @@ export default function Education() {
       <div>
         {education.map((e, i) => {
           const abroad = e.degree === "Study Abroad";
+          const head = [e.degree, e.location].filter(Boolean).join(" · ");
           return (
             <motion.div
               className="row"
@@ -32,11 +33,10 @@ export default function Education() {
                   </div>
                   {!abroad && (
                     <div className="meta-line">
-                      {e.degree}
-                      {e.location && ` · ${e.location}`}
+                      {head}
                       {e.gpa && (
                         <>
-                          {" · GPA "}
+                          {head ? " · GPA " : "GPA "}
                           <span className="gpa">{e.gpa}</span>
                         </>
                       )}
