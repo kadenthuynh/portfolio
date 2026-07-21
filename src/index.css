@@ -69,8 +69,9 @@ a { color: inherit; text-decoration: none; }
 .side-name { font-family: var(--font-disp); font-size: 38px; font-weight: 600; line-height: 1.05; letter-spacing: -.02em; color: var(--text); white-space: nowrap; }
 .side-role { font-size: 12.5px; color: var(--text2); margin-top: 6px; line-height: 1.5; white-space: pre-line; }
 .side-loc { font-family: var(--font-mono); font-size: 11px; color: var(--text3); margin-top: 6px; letter-spacing: .02em; }
-.side-contact-line { display: flex; align-items: center; justify-content: center; gap: 7px; margin-top: 8px; font-size: 10px; color: var(--text2); white-space: nowrap; }
-.side-contact-line a { display: inline-flex; align-items: center; gap: 4px; transition: color .15s; }
+.side-contact-line { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 3px 7px; margin-top: 8px; font-size: 10px; color: var(--text2); white-space: nowrap; }
+.side-contact-line .side-contact-group { display: inline-flex; align-items: center; gap: 5px; color: var(--text2); }
+.side-contact-line a { display: inline-flex; align-items: center; gap: 3px; transition: color .15s; }
 .side-contact-line a:hover { color: var(--accent); }
 .side-contact-line svg { flex-shrink: 0; opacity: .8; }
 .side-contact-line span { color: var(--text3); }
@@ -309,6 +310,7 @@ a { color: inherit; text-decoration: none; }
   .shell { grid-template-columns: 1fr; }
   .side { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--line); padding: 20px 24px; gap: 10px; }
   .side-figure { display: none; }
+  .side-contact-line { justify-content: flex-start; }
   .side-nav { flex-direction: row; flex-wrap: wrap; gap: 0 18px; margin-top: 4px; margin-bottom: 0; }
   .side-nav a { padding: 5px 0; }
   .side-nav .num { display: none; }
@@ -335,7 +337,6 @@ a { color: inherit; text-decoration: none; }
   .intro, .block { padding-left: 16px; padding-right: 16px; }
   .side { padding: 16px; }
   .side-name { font-size: 28px; }
-  .side-contact-line { flex-wrap: wrap; justify-content: flex-start; }
   .modal-body { padding: 20px 20px 32px; }
   .modal { border-radius: 10px; }
   .modal-head { padding: 14px 16px; }
