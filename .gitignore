@@ -28,3 +28,9 @@ dist-ssr
 .playwright-mcp
 .impeccable
 sidebar-1440.png
+
+# Internal working docs — keep local, never ship or publish
+HANDOFF.md
+PROPOSALS.md
+WAVE1-5-COURSEWORK-AUDIT.md
+WAVE4-RESUME-DIFF.md
