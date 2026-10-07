@@ -48,7 +48,7 @@ export const education = [
     school: "International Christian University (UCEAP)",
     location: "Tokyo, Japan",
     degree: "Study Abroad",
-    period: "Aug 2026 – Dec 2026",
+    period: "Aug 2026 – Nov 2026",
   },
   {
     school: "Universitat Autònoma de Barcelona (UCEAP)",
@@ -72,7 +72,7 @@ export const experience = [
     role: "Writing Tutor",
     company: "UCSB Campus Learning Assistance Services (CLAS)",
     location: "Santa Barbara, CA",
-    period: "Incoming · Sep 2026",
+    period: "Sep 2026 – Present",
     bullets: [
       "Selected to provide one-on-one writing support to students at every stage, from prompt analysis and drafting to structure, argumentation, and final revision",
       "Role centers on assessing individual student needs and developing targeted strategies to strengthen clarity, organization, and academic writing conventions",
@@ -167,17 +167,6 @@ export const projects = [
       "The app runs on vanilla JavaScript and syncs across devices through Supabase. It encrypts your credentials in the browser with PBKDF2 key derivation and AES-GCM, so they never travel in the clear. Vercel serverless functions drive the Google Calendar and Gmail integrations, and the Claude API calls run on context assembled per contact from the stored records rather than on raw thread dumps.",
     ],
     tech: ["Vanilla JS", "Supabase", "Claude API", "Google APIs", "Vercel"],
-    github: null,
-    live: null,
-  },
-  {
-    name: "Payback",
-    tagline: "A shared-expense splitter that returns a clean per-person breakdown with tax, tip, fees, and currencies.",
-    description: [
-      "A shared-expense splitter for whoever always covers the bill. Log the charges, tag who was in on each, and Payback returns a clean per-person breakdown with tax, tip, fees, adjustments, and multiple currencies.",
-      "The app runs on vanilla JavaScript and Vite, keeps everything in the browser, and deploys as a static site on Vercel. It pulls live exchange rates from the Frankfurter API, holds receipt photos in IndexedDB, and exports any breakdown to a shareable PNG with html-to-image.",
-    ],
-    tech: ["Vanilla JS", "Vite", "IndexedDB", "Vercel"],
     github: null,
     live: null,
   },
