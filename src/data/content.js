@@ -48,7 +48,8 @@ export const education = [
     school: "International Christian University (UCEAP)",
     location: "Tokyo, Japan",
     degree: "Study Abroad",
-    period: "Aug 2026 – Nov 2026",
+    period: "Sep 2026 – Dec 2026",
+    coursework: ["Japanese Politics", "Modern Moral Philosophy", "America and the World"],
   },
   {
     school: "Universitat Autònoma de Barcelona (UCEAP)",
@@ -72,10 +73,9 @@ export const experience = [
     role: "Writing Tutor",
     company: "UCSB Campus Learning Assistance Services (CLAS)",
     location: "Santa Barbara, CA",
-    period: "Sep 2026 – Present",
+    period: "Expected Jan 2027",
     bullets: [
       "Selected to provide one-on-one writing support to students at every stage, from prompt analysis and drafting to structure, argumentation, and final revision",
-      "Role centers on assessing individual student needs and developing targeted strategies to strengthen clarity, organization, and academic writing conventions",
     ],
   },
   {
